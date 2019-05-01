@@ -1,0 +1,130 @@
+﻿@model ShiYiJiShu.Models.CertSearchModel
+@{
+    ViewBag.Title = "证书查询 - ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var companyName = System.Configuration.ConfigurationManager.AppSettings["WebSiteName"].ToString();
+}
+
+<div class="mt15">
+    <div class="left">
+        @Html.Partial("_LeftMenuPartial")
+    </div>
+
+
+
+    <div class="mainRight">
+        <div class="colmain">
+            <div class="titlebg"><h2>证书查询</h2></div>
+            <div class="certQuery">
+                <table width="300" border="0" cellspacing="0" cellpadding="0" class="tb">
+                    
+                    <tr>
+                        <td class="l">姓名：</td>
+                        <td>
+                            <input type="text" id="txtName" class="txtbox1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="l">证书编号：</td>
+                        <td>
+                            <input type="text" id="txtCertNo" class="txtbox1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="l">验证码：</td>
+                        <td>
+                            <input type="text" id="txtCode" class="txtbox2" /> <input type="button" id="code" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="l"> </td>
+                        <td>
+                            <input type="button" class="btn" value="查询" onclick="CertSearch();" /> 
+                        </td>
+                    </tr>
+                </table>
+                <div class="certQueryDesc">
+                    <br /><br /><br />
+                    <b>查询说明:</b>
+                    <br />
+                    ①  查询系统仅限于查询@(companyName)颁发的证书；
+                    <br />
+                    ② 如需核实证书真伪，请在同时输入姓名、身份证号和证书编号进行查询；
+                    <br />
+                    ③ 如需其他帮助，请拨打@(companyName)电话。
+                </div>
+            </div>
+
+            <script type="text/javascript">
+                function CertSearch() {
+                    var defaultText = "请输入证书编号！";
+
+                    var name = $("#txtName").val().trim();
+                    var certNo = $("#txtCertNo").val().trim();
+
+                    if ($("#txtName").val() == "") {
+                        alert("请输入姓名！");
+                        $("#txtName").focus();
+                        return;
+                    }
+
+                    if ($("#txtCertNo").val() == "") {
+                        alert("请输入证书编号！");
+                        $("#txtCertNo").focus();
+                        return;
+                    }
+
+                    var inputCode = $("#txtCode").val().toUpperCase(); //取得输入的验证码并转化为大写
+
+                    if (inputCode.length == 0) //若输入的验证码长度为0
+                    {
+                        alert("请输入验证码！"); //则弹出请输入验证码
+                    }
+                    else if (inputCode != codes.toUpperCase()) //若输入的验证码与产生的验证码不一致时
+                    {
+                        alert("验证码输入错误！请重新输入"); //则弹出验证码输入错误
+                        change();//刷新验证码
+                        $("#txtCode").val("");//清空文本框
+                    }
+                    else //输入正确时
+                    {
+                        location.href = "/CertSearch/Result/?Name=" + name + "&CertNo=" + certNo;
+                    }
+                }
+
+                function change() {
+                    code = $("#code");
+                    // 验证码组成库
+                    var arrays = new Array(
+                        '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
+                        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+                        'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+                        'u', 'v', 'w', 'x', 'y', 'z',
+                        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+                        'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+                        'U', 'V', 'W', 'X', 'Y', 'Z'
+                        );
+                    codes = '';// 重新初始化验证码
+                    for (var i = 0; i < 4; i++) {
+                        // 随机获取一个数组的下标
+                        var r = parseInt(Math.random() * arrays.length);
+                        codes += arrays[r];
+                    }
+                    // 验证码添加到input里
+                    code.val(codes);
+                }
+
+                change();
+                code.click(change);
+
+                //单击验证
+                $("#check").click(function () {
+
+                });
+
+            </script>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>

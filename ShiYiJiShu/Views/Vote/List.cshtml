@@ -1,0 +1,95 @@
+﻿@model ShiYiJiShu.Models.VoteListModel
+@{
+    ViewBag.Title = Model.ClassName + " - ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="mt15">
+
+    <div class="left">
+        @Html.Action("GetNewsMenuPartial", "News", new { topClassID = Model.TopClassID, currentClassID = Model.ClassID, routeName = "Vote/List" })
+    </div>
+
+    <div class="colmain">
+        <div class="titlebg"><h2>网络投票</h2> </div>
+        <div class="vote">
+
+            
+
+            <div class="votelist">
+                <div class="listbg">
+                    <div class="votetitle">全国卫生产业企业管理协会健康服务适宜技术分会<br/>@(Model.ClassName)网络投票</div>
+
+                    <div class="text">
+                        <div class="bigtitle">(一)网络投票规则</div>
+                        <p>
+                            1、投票时间：
+                            @if (Model.ClassID == 170)
+                            {
+                                <span>2019年3月26日至2019年4月26日凌晨0点。</span>
+
+                            }
+                            else if (Model.ClassID == 174)
+                            {
+                                <span>2019年4月29日至2019年5月28日凌晨0点。</span>
+                            }
+                        </p>
+                        <p>
+                            2、投票方法：选中投票项目，直接投票。
+                        </p>
+                        <p>
+                            3、投票次数限制：每天每个IP同一个项目只能投1票。
+                        </p>
+                        <p>
+                            4、禁止刷票，后台发现刷票，立即取消项目的投票资格。
+                        </p>
+                        <p>
+                            5、监督电话：010-81314178。
+                        </p>
+                        <p>
+                            6、网络投票是项目推广参考标准之一。此次“@(Model.ClassName)”由项目申报单位推荐申报、项目所在单位专家负责、分会秘书处初筛，专家论证会论证，经过网络投票和论证专家的综合评价，最终推选出适合我会面向基层推广的适宜技术。<br />
+                        </p>
+
+                        <div class="bigtitle">(二)郑重声明</div>
+                        <p>
+                            1、本次活动从未与任何网络投票公司合作，禁止任何网络投票公司或个人联系被推荐的项目负责人。
+                        </p>
+                        <p>
+                            2、本次活动的最终解释权归全国卫生产业企业管理协会健康服务适宜技术分会所有 
+                        </p>
+                        <div class="bigtitle">(三)投票目的</div>
+                        <p>
+                            推广健康服务适宜技术，助力健康产业发展，紧紧围绕“保基本、强基层、建机制”医改目标，结合各级医院现有基础和条件，推广学得会、用得上，能切实提高医院诊疗水平的临床适宜技术，积极面向全国基层卫生行业联合开展培训推广工作。
+                        </p>
+                    </div>
+
+                    <ul>
+                        @foreach (var staff in Model.StaffList)
+                        {
+                            <li>
+                                <div class="container">
+                                    <div class="votepic">
+                                        <a href="@staff.LinkUrl" target="_blank"><img src="@System.Configuration.ConfigurationManager.AppSettings["DomainName"].ToString()/UploadPic/@staff.StaffPhoto" width="200" height="150" title="@staff.TechName" /></a>
+                                    </div>
+
+                                    <div class="countpanel" onclick="addvote('@staff.StaffID','@Model.ClassID')">
+                                        <div class="btnadd"></div>
+                                        <div class="lbcount" id="btn_@staff.StaffID" value="@staff.VoteCount">@staff.VoteCount</div>
+                                    </div>
+
+                                </div>
+                            </li>
+                        }
+                    </ul>
+
+                    <div class="clear"></div>
+                </div>
+ 
+            </div>
+        </div>
+ 
+        <div class="pagelink">@Html.Raw(Model.PageLink)</div>
+        <br/>
+    </div>
+</div>
+ 

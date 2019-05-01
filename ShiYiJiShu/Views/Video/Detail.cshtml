@@ -1,0 +1,55 @@
+﻿@model ShiYiJiShu.Models.VideoDetailModel
+@{
+    ViewBag.Title = "["+ Model.ClassName+"]"+ @Model.Video.VideoName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="mt15">
+    <div class="left">
+        @*@Html.Action("GetVideoMenuPartial", "Video", new { currentClassID = Model.ClassID })*@
+
+        @Html.Action("GetNewsMenuPartial", "News", new { topClassID = Model.TopClassID, currentClassID = Model.ClassID, routeName = "Video/List" })
+    </div>
+
+    <div class="colmain">
+        <div class="titlebg"><h2>@Model.TopClassName</h2> <span>@*<img src="~/Images/icon-home.png" />*@当前位置：首页 > @Model.TopClassName</span> </div>
+
+        <div class="videodetail">
+
+            <div class="videoname">
+                @Model.Video.VideoName
+            </div>
+
+            <div class="videoinfo"> 添加时间：@Model.Video.AddDate &nbsp; &nbsp; 阅读: @Model.Video.HitCount 次  &nbsp; &nbsp; 来源：@System.Configuration.ConfigurationManager.AppSettings["WebSiteName"].ToString() </div>
+
+            <div class="videoplay">
+                @if (!string.IsNullOrEmpty(Model.Video.VideoUploadUrl))
+                {
+                    <div class="video">
+                        <video controls="controls" width="600" height="480">
+                            <source src="~/UploadFiles/@Model.Video.VideoUploadUrl" type="video/mp4">
+                        </video>
+                    </div>
+                }
+
+                <br/>
+
+
+                @if (!string.IsNullOrEmpty(Model.Video.VideoUrl))
+                {
+                    @Html.Raw(Model.Video.VideoUrl)
+                }
+            </div>
+
+            <div class="videointro">
+                @Html.Raw(Model.Video.VideoIntro)
+
+            </div>
+            <div class="clear"></div>
+        </div>
+        </div>
+
+    </div>
+    <div class="clear"></div>
+　
+
+

@@ -1,0 +1,28 @@
+﻿@model ShiYiJiShu.Models.ShiYiJiShuMenuModel
+<div class="leftmenu">
+    <div class="top">适宜技术</div>
+    <div class="firstclass">工作介绍</div>
+    <div class="subclass">
+        <ul>
+            @foreach (var newsclass in Model.GongZuoJieShao)
+            {
+                <li>
+                    <a href="~/Info/@newsclass.ClassID" @if (newsclass.ClassID == Model.CurrentClassID) { @Html.Raw("class='sel'")    ; }>@newsclass.ClassName</a>
+                </li>
+            }           
+        </ul>
+    </div>
+ 
+    <div class="firstclass">入选技术</div>
+    <div class="subclass">
+        <ul>
+            @foreach (var newsclass in Model.RuXuanJiShu)
+            {
+                <li class="sub">
+                    <a href="~/List/@newsclass.ClassID" @if (newsclass.ClassID == Model.CurrentClassID) { @Html.Raw("class='sel'")      ; }>@newsclass.ClassName</a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+

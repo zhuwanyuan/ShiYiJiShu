@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title @System.Configuration.ConfigurationManager.AppSettings["WebSiteName"]</title>
+    <meta name="keywords" content="@ViewBag.Keyword" />
+    <meta name="description" content="@ViewBag.Description" />
+
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="~/Content/layui/css/layui.css" rel="stylesheet" />
+    <link href="~/Content/style.css??version=@System.Configuration.ConfigurationManager.AppSettings["VersionNumber"].ToString()" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script src="~/Content/layui/layui.js"></script>
+
+    <script src="~/Scripts/jquery.taber.js"></script>
+
+    <script src="~/Scripts/vote.js?version=@System.Configuration.ConfigurationManager.AppSettings["VersionNumber"].ToString()"></script>
+
+   
+</head>
+    <body>
+        <div class="main">
+            <div><img src="~/Images/shiyi_02.jpg" /></div>
+
+            <div class="banner">
+               
+                <ul>
+                    <li><a href="~/">网站首页</a></li>
+                    <li><a href="~/Info/22">关于本会</a></li>
+                    <li><a href="~/Doctor/Index/0">专家委员会</a></li>
+                    <li><a href="~/List/3">通知公告</a></li>
+                    <li><a href="~/List/4">学术动态</a></li>
+                    <li><a href="~/List/7">基地建设</a></li>
+                    <li><a href="~/Info/141">适宜技术</a></li>
+
+                    <li><a href="~/List/8">政策法规</a></li>
+                    <li><a href="~/List/135">会员中心</a></li>
+                    <li><a href="~/List/10">成果转化</a></li>
+                    <li><a href="~/Video/List/0">视频中心</a></li>
+                    <li><a href="~/Project/List/0">项目展示</a></li>
+                    <li><a href="~/CertSearch/">证书查询</a></li>
+                    <li><a href="~/Vote/List/174">网络投票</a></li>
+                </ul>
+               <div class="clear"></div>
+            </div>
+
+
+
+            @RenderBody()
+
+            <div class="clear"></div>
+
+            <div class="footer">
+                <div class="link"><a href="~/Web_Manage/index.aspx">网站管理</a> | <a href="mailto:syjsgzwyh@126.com">分会信箱</a> | <a href="/Info/16">联系我们</a></div>
+
+                <div class="text">
+                    主办单位：全国卫生产业企业管理协会健康服务适宜技术分会  All Rights Reserved <br/>
+                    技术支持：北京康乐医耀健康科技有限公司 <br/>
+                    京ICP5201478号 
+                </div>
+            </div>
+        </div>
+       
+                
+    </body>
+</html>

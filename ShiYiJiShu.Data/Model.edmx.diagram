@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dbc7da5042fe4747a1e149bcccd73231" Name="Diagram1">
+        <EntityTypeShape EntityType="ShiYiJiShuModel.AdminUser" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShiYiJiShuModel.Certificate" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShiYiJiShuModel.Doctor" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShiYiJiShuModel.FocusPic" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShiYiJiShuModel.FriendLink" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShiYiJiShuModel.Info" Width="1.5" PointX="2.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShiYiJiShuModel.News" Width="1.5" PointX="6.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShiYiJiShuModel.NewsClass" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShiYiJiShuModel.Project" Width="1.5" PointX="8.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShiYiJiShuModel.Technology" Width="1.5" PointX="4.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShiYiJiShuModel.Video" Width="1.5" PointX="10.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShiYiJiShuModel.VoteLog" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShiYiJiShuModel.VoteStaff" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShiYiJiShuModel.Job" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShiYiJiShuModel.Province" Width="1.5" PointX="10.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShiYiJiShuModel.ProjectRegister" Width="1.5" PointX="2.75" PointY="6.375" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

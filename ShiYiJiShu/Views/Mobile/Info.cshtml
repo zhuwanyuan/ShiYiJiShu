@@ -1,0 +1,23 @@
+﻿@model ShiYiJiShu.Models.InfoModel
+@{
+    ViewBag.Title = "Info";
+    Layout = "~/Views/Shared/_LayoutMobile.cshtml";
+}
+
+<div class="content">
+    <div class="titlebg">
+        <h2>@Model.ClassName</h2> 
+        @if (Model.HasSubClass)
+        {
+            <span onclick="openmenu()"><img src="~/Images/mobile/category.png" width="25" /></span>
+        }
+    </div>
+
+    @Html.Action("GetShiYiJiShuMenuPartial", "News", new { currentClassID = Model.ClassID })
+
+    <div class="info">
+        <div class="infocontent">
+            @Html.Raw(Model.Info.InfoContent)
+        </div>
+    </div>
+</div>

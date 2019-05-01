@@ -1,0 +1,29 @@
+﻿@model ShiYiJiShu.Models.InfoModel
+@{
+    ViewBag.Title = Model.ClassName + " - ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="mt15">
+    <div class="left">
+        @if (Model.ParentClassID == 139 || Model.ParentClassID == 140)
+        {
+            @Html.Action("GetShiYiJiShuMenuPartial", "News", new { currentClassID = Model.ClassID })
+        }
+        else
+        {
+            @Html.Action("GetAboutLeftMenu", new { parentClassID = 15, currentClassID = Model.ClassID })
+        }
+        </div>
+
+
+    <div class="colmain">
+        <div class="titlebg"><h2>@Model.ClassName</h2> <span>@*<img src="~/Images/icon-home.png" />*@当前位置：首页 > @Model.ClassName</span> </div>
+        
+        <div class="info">
+             <div class="infoContent">@Html.Raw(Model.Info.InfoContent)</div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+

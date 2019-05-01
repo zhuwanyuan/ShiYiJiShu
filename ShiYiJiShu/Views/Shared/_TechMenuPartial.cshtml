@@ -1,0 +1,17 @@
+﻿@model JianKangChanYe.Models.TechMenuModel
+<div class="top">适宜技术 </div>
+<ul>
+    <li><a href="javascript:void(0)" class="sel">工作介绍</a></li>
+    @foreach (var newsClass in Model.GongZuoJieShao)
+    {
+        <li><a href="/Tech/Info/@newsClass.ClassID">@newsClass.ClassName</a></li>
+    }
+
+    <li><a href="javascript:void(0)" class="sel">入选技术</a></li>
+
+    @foreach (var newsClass in Model.RuXuanJiShu)
+    {
+        <li><a href="/Tech/List/@newsClass.ClassID">@newsClass.ClassName</a></li>
+    }
+
+</ul>

@@ -1,0 +1,49 @@
+﻿@model ShiYiJiShu.Models.CertificateModel
+@{
+    ViewBag.Title = "证书查询结果 - ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="mt15">
+    <div class="left">
+        @Html.Partial("_LeftMenuPartial")
+    </div>
+
+    <div class="colmain">
+        <div class="titlebg"><h2>查询结果</h2></div>
+        <div class="certQueryDesc">
+
+            @if (Model.CertID != 0)
+            {
+                <table width="730" border="0" cellspacing="0" cellpadding="0" class="tbDoctor">
+                    <tr>
+                        <td rowspan="5" style=" width:150px; vertical-align:top">
+                            <img src="~/UploadPic/@Model.Picture" width="110" height="140" />
+                        </td>
+                        <td><b>名称：</b> @Model.Name</td>
+                    </tr>
+                    <tr>
+                        <td><b>身份证号：</b>@Model.IDNumber</td>
+                    </tr>
+                    <tr>
+                        <td><b>证书编号：</b> @Model.CertNo</td>
+                    </tr>
+                </table>
+
+                <div class="certSample">
+                    <div class="docTitle">证书样本：</div>  
+                   
+                    <div class="docIntro">@Html.Raw(Model.CertSample)</div>
+                </div>
+                <div class="clear"></div>
+            }
+            else
+            {
+                @Html.Raw("<div class='noresult'>对不起，没有查询到相关数据！</div>");
+            }
+
+        </div>
+    </div>
+    
+</div>
+<div class="clear"></div>

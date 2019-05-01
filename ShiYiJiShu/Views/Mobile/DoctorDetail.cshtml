@@ -1,0 +1,48 @@
+﻿@model ShiYiJiShu.Models.DoctorDetailModel
+@{
+    ViewBag.Title = "DoctorDetail";
+    Layout = "~/Views/Shared/_LayoutMobile.cshtml";
+}
+
+<div class="content">
+    <div class="titlebg"><h2>@Model.ClassName</h2>  </div>
+    <div class="doctordetail">
+        <div class="docname">@Model.Doctor.DoctorName</div>
+        <div class="docinfo">添加时间：@Convert.ToDateTime(Model.Doctor.EditDateTime)  &nbsp; &nbsp;  查看: @Model.Doctor.HitCount 次 </div>
+
+        <div class="docpic">
+            <img src="~/UploadPic/@Model.Doctor.DoctorPic" width="150" height="200" />
+        </div>
+
+        <div class="text">@Html.Raw(Model.Doctor.DoctorIntro) </div>
+
+
+        <div class="prenext">
+            <span class="fl">
+                上一位专家：
+                @if (Model.PreDoctor != null && Model.PreDoctor.DoctorID != 0)
+                {
+                    <a href="/Doctor/Detail/@Model.PreDoctor.DoctorID">@Model.PreDoctor.DoctorName</a>
+                }
+                else
+                {
+                    @Html.Raw("没有了");
+                }
+            </span>
+            <span class="fr">
+                下一位专家：
+                @if (Model.NextDoctor != null && Model.NextDoctor.DoctorID != 0)
+                {
+                    <a href="/Doctor/Detail/@Model.NextDoctor.DoctorID">@Model.NextDoctor.DoctorName</a>
+                }
+                else
+                {
+                    @Html.Raw("没有了");
+                }
+            </span>
+        </div>
+    </div>
+</div>
+
+
+

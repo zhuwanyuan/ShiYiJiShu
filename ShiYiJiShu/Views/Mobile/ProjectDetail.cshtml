@@ -1,0 +1,25 @@
+﻿@model ShiYiJiShu.Models.ProjectDetailModel
+@{
+    ViewBag.Title = "VideoDetail";
+    Layout = "~/Views/Shared/_LayoutMobile.cshtml";
+}
+
+<div class="content">
+    <div class="titlebg"><h2>@Model.TopClassName</h2> <span onclick="openmenu()"><img src="~/Images/mobile/category.png" width="25" /></span></div>
+
+    <div class="projectdetail">
+        <div class="ptitle">
+            @Model.Project.ProjectName
+        </div>
+
+        <div class="pinfo"> 添加时间：@Model.Project.EditDateTime &nbsp; &nbsp; 点击: @Model.Project.HitCount 次  </div>
+
+        <div class="clear"></div>
+
+        <div class="pcontent">@Html.Raw(Model.Project.ProjectIntro)</div>
+    </div>
+
+</div>
+
+
+

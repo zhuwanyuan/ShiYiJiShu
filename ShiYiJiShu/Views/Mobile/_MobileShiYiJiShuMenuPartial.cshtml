@@ -1,0 +1,32 @@
+﻿@model ShiYiJiShu.Models.ShiYiJiShuMenuModel
+
+<div class="category" id="mobilemenu">
+    <ul class="bui-list">
+        <li class="bui-btn-title">
+            工作介绍
+        </li>
+
+        @foreach (var newsclass in Model.GongZuoJieShao)
+        {
+            <li class="bui-btn bui-box">
+                <div class="span1">
+                    <a href="~/Info/@newsclass.ClassID" @if (newsclass.ClassID == Model.CurrentClassID) { @Html.Raw("class='sel'") ; }>@newsclass.ClassName</a>
+                </div>
+                <i class="icon-listright"></i>
+            </li>
+        }
+        <li class="bui-btn-title">
+           入选技术
+        </li>
+
+        @foreach (var newsclass in Model.RuXuanJiShu)
+        {
+            <li class="bui-btn bui-box">
+                <div class="span1">
+                    <a href="~/List/@newsclass.ClassID" @if (newsclass.ClassID == Model.CurrentClassID) { @Html.Raw("class='sel'") ; }>@newsclass.ClassName</a>
+                </div>
+                <i class="icon-listright"></i>
+            </li>
+        }
+    </ul>
+</div>

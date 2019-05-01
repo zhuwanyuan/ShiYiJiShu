@@ -1,0 +1,17 @@
+﻿@model ShiYiJiShu.Models.VoteDetailModel
+@{
+    ViewBag.Title = "网络投票 - ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="titlebg mt15"><h2>网络投票</h2> </div>
+<div class="staffdetail mt15">
+    <div class="info">
+        <div class="infoContent">
+            @Html.Raw(Model.VoteStaff.StaffDetail)
+        </div>
+    </div>
+
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>

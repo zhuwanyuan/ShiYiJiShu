@@ -1,0 +1,149 @@
+﻿@model ShiYiJiShu.Models.DoctorIndexModel
+@{
+    ViewBag.Title = Model.ClassName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="mt15">
+    <div class="left">
+        @Html.Action("DoctorLeftMenu", new { currentClassID = 0 })
+    </div>
+
+    <div class="colmain">
+        <div class="province">
+            <ul>
+                <li><b>省份：</b></li>
+                <li>
+                    <a href="/Doctor/Index/000000" @if (Model.ProvinceID == "000000") { @Html.Raw("class='sel'") }>全部</a>
+                </li>
+                @foreach (var pro in Model.ProvinceList)
+                {
+                    <li>
+                        <a href="/Doctor/Index/@pro.Code" @if(Model.ProvinceID == @pro.Code) { @Html.Raw("class='sel'") }>@pro.Name</a>
+                    </li>
+                }
+               
+            </ul>
+            <div class="clear"></div>
+        </div>
+        @if (Model.ProvinceID != "0") //按省份搜索
+        {
+            <div class="titlebg mt15"><h2>@Model.ProvinceName</h2> <span></span> </div>
+            <div class="doctorlist">
+                <ul>
+                    @foreach (var doctor in Model.DoctorList)
+                    {
+                        <li>
+                            <div class="pic">
+
+                                <a href="/Doctor/Detail/@doctor.DoctorID" title="@doctor.DoctorName">
+                                    <img src="~/UploadPic/@doctor.DoctorPic" width="115" height="150" />
+                                </a>
+                            </div>
+
+                            <div class="docintro">
+
+                                <div class="doclabel">专家姓名：</div>
+                                <div class="doctext">
+                                    <div class="dname">
+                                        <span><b>@doctor.DoctorName</b></span> (@if (doctor.DoctorType == 1)
+                                        { @Html.Raw("首席专家") }
+                                        else if (doctor.DoctorType == 2)
+                                        { @Html.Raw("特邀专家") })
+                                    </div>
+                                </div>
+                                <div class="doclabel">专家职称：</div><div class="doczhicheng">@doctor.DoctorJobTitle</div>
+                                <div class="doclabel">单位职务：</div><div class="doczhiwu">@doctor.DoctorCompany</div>
+                                <div class="clear"></div>
+                                <div class="dmore"><a href="/Doctor/Detail/@doctor.DoctorID">查看更多++</a></div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+
+                <div class="clear"></div>
+                <div class="pagelink">@Html.Raw(Model.PageLink)</div>
+            </div>
+        }
+        else //显示首席专家和特邀专家
+        {
+            <div class="titlebg mt15"><h2>首席专家</h2> <span> <a href="/Doctor/Index/1">更多>></a> </span> </div>
+
+            <div class="doctorlist">
+                <ul>
+                    @foreach (var doctor in Model.ShouXiDoctorList)
+                    {
+                        <li>
+                            <div class="pic">
+
+                                <a href="/Doctor/Detail/@doctor.DoctorID" title="@doctor.DoctorName">
+                                    <img src="~/UploadPic/@doctor.DoctorPic" width="115" height="150" />
+                                </a>
+                            </div>
+
+                            <div class="docintro">
+
+                                <div class="doclabel">专家姓名：</div>
+                                <div class="doctext">
+                                    <div class="dname">
+                                        <span><b>@doctor.DoctorName</b></span> (@if (doctor.DoctorType == 1)
+                                        { @Html.Raw("首席专家") }
+                                        else if (doctor.DoctorType == 2)
+                                        { @Html.Raw("特邀专家") })
+                                    </div>
+                                </div>
+                                <div class="doclabel">专家职称：</div><div class="doczhicheng">@doctor.DoctorJobTitle</div>
+                                <div class="doclabel">单位职务：</div><div class="doczhiwu">@doctor.DoctorCompany</div>
+                                <div class="clear"></div>
+                                <div class="dmore"><a href="/Doctor/Detail/@doctor.DoctorID">查看更多++</a></div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+
+                <div class="clear"></div>
+            </div>
+
+            <div class="titlebg"><h2>特邀专家</h2> <span><a href="/Doctor/Index/2">更多>></a></span> </div>
+
+            <div class="doctorlist">
+                <ul>
+                    @foreach (var doctor in Model.TeYaoDoctorList)
+                    {
+                        <li>
+                            <div class="pic">
+
+                                <a href="/Doctor/Detail/@doctor.DoctorID" title="@doctor.DoctorName">
+                                    <img src="~/UploadPic/@doctor.DoctorPic" width="115" height="150" />
+                                </a>
+                            </div>
+
+                            <div class="docintro">
+
+                                <div class="doclabel">专家姓名：</div>
+                                <div class="doctext">
+                                    <div class="dname">
+                                        <span><b>@doctor.DoctorName</b></span> (@if (doctor.DoctorType == 1)
+                                        { @Html.Raw("首席专家") }
+                                        else if (doctor.DoctorType == 2)
+                                        { @Html.Raw("特邀专家") })
+                                    </div>
+                                </div>
+                                <div class="doclabel">专家职称：</div><div class="doczhicheng">@doctor.DoctorJobTitle</div>
+                                <div class="doclabel">单位职务：</div><div class="doczhiwu">@doctor.DoctorCompany</div>
+                                <div class="clear"></div>
+                                <div class="dmore"><a href="/Doctor/Detail/@doctor.DoctorID">查看更多++</a></div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+
+                <div class="clear"></div>
+            </div>
+        }
+
+    </div>
+
+    <div class="clear"></div>
+</div>
+

@@ -1,0 +1,39 @@
+﻿@model ShiYiJiShu.Models.NewsDetailModel
+@{
+    ViewBag.Title = "["+ @Model.ClassName+"] " + @Model.News.NewsTitle;
+    ViewBag.Keyword = Model.News.Keyword;
+    ViewBag.Description = Model.News.Description;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="mt15">
+    <div class="left">
+        @if (Model.ParentClassID == 139 || Model.ParentClassID == 140)
+        {
+            @Html.Action("GetShiYiJiShuMenuPartial", "News", new { currentClassID = Model.ClassID })
+        }
+        else
+        {
+            @Html.Partial("_LeftMenuPartial")
+        }
+
+    </div>
+
+    <div class="colmain">
+        <div class="titlebg"><h2>@Model.ClassName</h2> <span>@*<img src="~/Images/icon-home.png" />*@当前位置：首页 > @Model.ClassName</span> </div>
+
+        <div class="news">
+            <div class="newstitle"> @Model.News.NewsTitle</div>
+            <div class="newsinfo"> 添加时间：@Model.News.CreateDate &nbsp; &nbsp; 阅读: @Model.News.HitCount 次  &nbsp; &nbsp; 来源：@Model.News.Source   </div>
+            <div class="newscontent">@Html.Raw(Model.News.NewsContent)</div>
+        </div>
+
+
+    </div>
+    <div class="clear"></div>
+</div>
+
+
+
+ 
+ 

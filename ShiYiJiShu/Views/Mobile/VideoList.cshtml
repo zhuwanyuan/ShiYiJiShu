@@ -1,0 +1,32 @@
+﻿@model ShiYiJiShu.Models.VideoListModel
+@{
+    ViewBag.Title = "VideoList";
+    Layout = "~/Views/Shared/_LayoutMobile.cshtml";
+}
+
+<div class="content">
+    <div class="titlebg"><h2>@Model.TopClassName</h2> <span onclick="openmenu()"><img src="~/Images/mobile/category.png" width="25" /></span></div>
+
+    @Html.Action("GetNewsMenuPartial", "News", new { topClassID = Model.TopClassID, currentClassID = Model.ClassID, routeName = "Video/List" })
+
+
+    <div class="videoes">
+        <div class="bui-fluid-space">
+            @foreach (var video in Model.VideoList)
+            {
+                <div class="span6">
+                    <a href="~/Video/Detail/@video.VideoID">
+                        <img src="@System.Configuration.ConfigurationManager.AppSettings["DomainName"].ToString()/UploadPic/@video.VideoFilePath"  width="180" height="130" />
+                    </a>
+                    <div class="proname">
+                        <a href="~/Video/Detail/@video.VideoID">@video.VideoName</a>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="pagelink">@Html.Raw(Model.PageLink)</div>
+
+    </div>
+</div>
+

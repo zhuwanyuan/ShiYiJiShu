@@ -1,0 +1,18 @@
+﻿@model ShiYiJiShu.Models.VideoMenuModel
+<div class="leftmenu">
+    <div class="top">视频中心</div>
+     
+    <div class="subclass">
+        <ul>
+            @foreach (var newsclass in Model.VideoSubClass)
+            {
+                <li>
+                    <a href="~/Video/List/@newsclass.ClassID" @if (newsclass.ClassID == Model.CurrentClassID) { @Html.Raw("class='sel'")    ; }>@newsclass.ClassName</a>
+                </li>
+            }           
+        </ul>
+    </div>
+ 
+   
+</div>
+

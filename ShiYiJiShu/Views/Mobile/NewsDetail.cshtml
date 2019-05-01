@@ -1,0 +1,21 @@
+﻿@model ShiYiJiShu.Models.NewsDetailModel
+@{
+    ViewBag.Title = "NewsDetail";
+    Layout = "~/Views/Shared/_LayoutMobile.cshtml";
+}
+
+<div class="content">
+    <div class="titlebg"><h2>@Model.ClassName</h2>  </div>
+    <div class="newsdetail">
+        <div class="newstitle">
+            @Model.News.NewsTitle
+        </div>
+
+        <div class="newsinfo"> 添加时间：@Model.News.CreateDate &nbsp; &nbsp; 阅读: @Model.News.HitCount 次</div>
+
+        <div class="clear"></div>
+
+        <div class="newscontent">@Html.Raw(Model.News.NewsContent)</div>
+    </div>
+</div>
+

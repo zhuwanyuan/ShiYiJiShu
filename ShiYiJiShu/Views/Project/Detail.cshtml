@@ -1,0 +1,22 @@
+﻿@model ShiYiJiShu.Models.ProjectDetailModel
+@{
+    ViewBag.Title = "[" + Model.ClassName + "]" + @Model.Project.ProjectName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="mt15">
+        <div class="titlebg"><h2>@Model.ClassName</h2> <span>@*<img src="~/Images/icon-home.png" />*@当前位置：首页 > @Model.ClassName</span> </div>
+
+        <div class="projectdetail">
+
+            <div class="projectname">@Model.Project.ProjectName</div>
+            <div class="projectinfo">添加时间：@Model.Project.EditDateTime &nbsp; &nbsp; 阅读: @Model.Project.HitCount 次  &nbsp; &nbsp; 来源：@System.Configuration.ConfigurationManager.AppSettings["WebSiteName"].ToString() </div>
+
+            <div class="intro">
+ 
+                @Html.Raw(Model.Project.ProjectIntro)
+            </div>
+        </div>
+
+        <div class="clear"></div>
+</div>

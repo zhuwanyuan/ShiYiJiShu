@@ -1,0 +1,72 @@
+﻿@model ShiYiJiShu.Models.DoctorDetailModel
+@{
+    ViewBag.Title = Model.Doctor.DoctorName + " - " + Model.Doctor.SecondClassName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="mt15">
+    <div class="left">
+        @Html.Action("DoctorLeftMenu", new { currentClassID = Model.ClassID })
+    </div>
+
+    <div class="colmain">
+        <div class="province">
+            <ul>
+                <li><b>省份：</b></li>
+                <li>
+                    <a href="/Doctor/Index/000000" @if (Model.ProvinceID == "000000") { @Html.Raw("class='sel'")  }>全部</a>
+                </li>
+                @foreach (var pro in Model.ProvinceList)
+                {
+                    <li>
+                        <a href="/Doctor/Index/@pro.Code" @if (Model.ProvinceID == @pro.Code) { @Html.Raw("class='sel'")  }>@pro.Name</a>
+                    </li>
+                }
+
+            </ul>
+            <div class="clear"></div>
+        </div>
+
+        <div class="titlebg mt15"><h2>@Model.ClassName</h2> <span>全国卫生产业企业管理协会健康服务适宜技术分会专家委员会：@Model.ParentClassName > @Model.ClassName</span> </div>
+
+        <div class="doctordetail">
+            <div class="clear"></div>
+            <div class="name">@Model.Doctor.DoctorName</div>
+            <div class="info">添加时间：@Convert.ToDateTime(Model.Doctor.EditDateTime)  &nbsp; &nbsp;  阅读: @Model.Doctor.HitCount 次  &nbsp; &nbsp;  来源：健康服务适宜技术分会</div>
+
+            <div class="docpic">
+                <img src="~/UploadPic/@Model.Doctor.DoctorPic" width="150" height="200" />
+            </div>
+
+            <div class="text">@Html.Raw(Model.Doctor.DoctorIntro) </div>
+
+
+            <div class="prenext">
+                <span class="fl">
+                   上一位专家： 
+                    @if (Model.PreDoctor != null && Model.PreDoctor.DoctorID != 0)
+                    { 
+                        <a href="/Doctor/Detail/@Model.PreDoctor.DoctorID">@Model.PreDoctor.DoctorName</a>
+                    }
+                    else 
+                    { 
+                        @Html.Raw("没有了");
+                    }
+                </span>
+                <span class="fr">
+                    下一位专家：
+                    @if (Model.NextDoctor != null && Model.NextDoctor.DoctorID != 0)
+                    {
+                        <a href="/Doctor/Detail/@Model.NextDoctor.DoctorID">@Model.NextDoctor.DoctorName</a>
+                    }
+                    else
+                    {
+                        @Html.Raw("没有了");
+                    }
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+</div>

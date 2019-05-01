@@ -1,0 +1,61 @@
+﻿    <div class="leftmenu">
+        <div class="top">
+            @if (Model.ParentClassID != null && Model.ParentClassID == 9)
+            {
+                @Html.Raw("会员中心")
+            }
+             
+            else
+            {
+                @Html.Raw("栏目导航")
+            }
+        </div>
+
+        <div class="subclass">
+            @if (Model.ParentClassID == 177)
+            {
+                <ul>
+                    <li>
+                        <a href="~/List/135" @if (Model.ClassID == 135) { @Html.Raw("class='sel'") }>副会长单位</a>
+                    </li>
+                    <li>
+                        <a href="~/List/136" @if (Model.ClassID == 136) { @Html.Raw("class='sel'") }>会员单位</a>
+                    </li>
+                    <li>
+                        <a href="~/List/137" @if (Model.ClassID == 137) { @Html.Raw("class='sel'") }>常务理事单位</a>
+                    </li>
+                    <li>
+                        <a href="~/List/138" @if (Model.ClassID == 138) { @Html.Raw("class='sel'") }>理事单位</a>
+                    </li>
+                </ul>
+            }
+            
+            else
+            {
+                <ul>
+                    <li>
+                        <a href="~/List/2" @if (Model.ClassID == 2) { @Html.Raw("class='sel'") }>最新动态</a>
+                    </li>
+                    <li>
+                        <a href="~/List/4" @if (Model.ClassID == 4) { @Html.Raw("class='sel'") }>学术动态</a>
+                    </li>
+                    <li>
+                        <a href="~/List/6" @if (Model.ClassID == 6) { @Html.Raw("class='sel'") }>入选项目</a>
+                    </li>
+                    <li>
+                        <a href="~/Video/List/" @if (Model.ClassID == 11) { @Html.Raw("class='sel'") }>视频中心</a>
+                    </li>
+                    <li>
+                        <a href="~/Project/List/0" @if (Model.ClassID == 19) { @Html.Raw("class='sel'") }>项目展示</a>
+                    </li>
+                    <li>
+                        <a href="~/Vote/List/" @if (Model.ClassID == 13) { @Html.Raw("class='sel'") }>网络投票</a>
+                    </li>
+                    <li><a href="/Doctor/Index/0">专家委员会</a> </li>
+                </ul>
+            }
+        </div>
+    </div>
+                   
+
+

@@ -1,0 +1,53 @@
+﻿@model ShiYiJiShu.Models.DoctorListModel
+@{
+    ViewBag.Title = "DoctorList";
+    Layout = "~/Views/Shared/_LayoutMobile.cshtml";
+}
+
+<div class="content">
+    <div class="titlebg"><h2>@Model.ClassName</h2> <span onclick="openmenu()"><img src="~/Images/mobile/category.png" width="25" /></span></div>
+
+    @Html.Action("DoctorLeftMenu", new { currentClassID = Model.ClassID })
+
+
+    <div class="doctorlist">
+
+        <ul>
+            @foreach (var doctor in Model.DoctorList)
+            {
+                <li>
+                    <a href="/Doctor/Detail/@doctor.DoctorID" title="@doctor.DoctorName">
+                        <div class="bui-box">
+                            <div class="docpic">
+                                <img src="@System.Configuration.ConfigurationManager.AppSettings["DomainName"].ToString()/UploadPic/@doctor.DoctorPic" width="115" height="150" />
+                            </div>
+                            <div class="span1">
+                                <div class="docintro">
+
+                                    <div class="doclabel">专家姓名：</div>
+                                    <div class="doctext">
+                                        <div class="dname">
+                                            <span><b>@doctor.DoctorName</b></span> (@if (doctor.DoctorType == 1)
+                                            {@Html.Raw("首席专家") }
+                                        else if (doctor.DoctorType == 2)
+                                        { @Html.Raw("特邀专家")})
+                                        </div>
+                                    </div>
+                                    <div class="doclabel">专家职称：</div><div class="doczhicheng">@doctor.DoctorJobTitle</div>
+                                    <div class="doclabel">单位职务：</div><div class="doczhiwu">@doctor.DoctorCompany</div>
+                                    <div class="clear"></div>
+                                    @*<div class="dmore"><a href="/Doctor/Detail/@doctor.DoctorID">查看更多++</a></div>*@
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                </li>
+            }
+        </ul>
+
+        <div class="clear"></div>
+        <div class="pagelink">@Html.Raw(Model.PageLink)</div>
+    </div>
+</div>
+

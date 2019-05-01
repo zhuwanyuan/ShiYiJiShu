@@ -1,0 +1,23 @@
+﻿@model ShiYiJiShu.Models.TechInfoModel
+@{
+        ViewBag.Title = Model.ClassName + " - " + System.Configuration.ConfigurationManager.AppSettings["WebSiteName"].ToString();
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+
+<div class="mt15">
+    <div class="leftmenu">
+        @Html.Action("techMenuPartial", "Tech")
+    </div>
+
+    <div class="mainRight">
+        
+        <div class="info">
+            <div class="titlebg2"><h2>@Model.ClassName</h2> </div>
+            <div class="infoContent">
+                @Html.Raw(Model.Info.InfoContent)
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>

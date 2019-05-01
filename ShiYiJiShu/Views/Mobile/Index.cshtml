@@ -1,0 +1,337 @@
+﻿@model ShiYiJiShu.Models.HomeModel
+@{
+    Layout = "~/Views/Shared/_LayoutMobile.cshtml";
+}
+
+<!-- Swiper -->
+<div class="swiper-container" id="slidepic">
+    <div class="swiper-wrapper">
+        @foreach (var fp in Model.FocusPicList)
+        {
+            <div class="swiper-slide">
+                    <a href="/News/Detail/@fp.NewsID">
+                        <p><img src="@System.Configuration.ConfigurationManager.AppSettings["DomainName"].ToString()/UploadPic/@fp.NewsPic" height="235"></p>
+
+                    </a>
+                </div>
+        }
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+
+<div class="clear"></div>
+
+<div class="topnews">
+    <div class="bui-box">
+        <div class="leftpanel">最新<br/>动态</div>
+        <div class="span1">
+            <div class="toptitle">
+                @foreach (var news in Model.ZuiXinDongTai)
+                {
+                    <a href="/News/Detail/@news.NewsID">@news.NewsTitle</a>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt15">
+    <div class="titlebg">
+        <h2>新闻中心</h2> <a href="/List/21">更多>></a>
+    </div>
+
+    <div class="detailnews">
+        @if (Model.WoHuiDongTai != null && Model.WoHuiDongTai.Count > 0)
+        {
+            var news = Model.WoHuiDongTai.FirstOrDefault();
+            <div class="title"><a href="/News/Detail/@news.NewsID">@news.NewsTitle</a> </div>
+            var content = System.Text.RegularExpressions.Regex.Replace(news.NewsContent, "<[^>]*>|&nbsp;", "");
+            <div class="summary">
+                @if (content.Length > 65)
+                {
+                    @content.Substring(0, 65)
+                }
+                else
+                {
+                    @content
+                }
+            </div>
+        }
+    </div>
+
+    <div class="newslist">
+        <ul>
+            @if (Model.WoHuiDongTai != null && Model.WoHuiDongTai.Count > 1)
+            {
+                foreach (var news in Model.WoHuiDongTai.Skip(1).Take(3))
+                {
+                   <li><a href="/News/Detail/@news.NewsID">@news.NewsTitle</a></li>
+                }
+            }
+        </ul>
+    </div>
+</div>
+
+<div class="mt15">
+    <div class="titlebg2">
+        <div class="title">通知公告</div> <a href="/List/3">更多>></a>
+    </div>
+
+    <div class="newslist">
+        <ul>
+            @foreach (var news in Model.TongZhiGongGao)
+            {
+                <li><a href="~/News/Detail/@news.NewsID" title="@news.NewsTitle">@news.NewsTitle</a></li>
+            }
+        </ul>
+    </div>
+</div>
+
+
+<div class="mt15">
+    <div class="titlebg">
+        <h2>专家委员会</h2> <a href="#">更多>></a>
+    </div>
+
+
+    <div class="doctors" id="doctors">
+        <div class="swiper-wrapper">
+            @foreach (var doctor in Model.DoctorList)
+            {
+                <div class="swiper-slide">
+                    <div class="container">
+                        <a href="/Doctor/Detail/@doctor.DoctorID"><img src="@System.Configuration.ConfigurationManager.AppSettings["DomainName"].ToString()/UploadPic/@doctor.DoctorPic" width="115" height="140" /></a>
+                        <p class="docname"><a href="/Doctor/Detail/@doctor.DoctorID">@doctor.DoctorName</a></p>
+                    </div>
+                </div>
+            }
+ 
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<div class="mt15">
+    <div class="titlebg">
+        <h2>项目展示</h2> <a href="/Project/List/0">更多>></a>
+    </div>
+
+
+    <div class="projects">
+        <div class="bui-fluid-space">
+            @foreach (var pro in Model.ProjectList)
+            {
+                <div class="span6">
+                    <a href="~/Project/Detail/@pro.ProjectID"><img src="@System.Configuration.ConfigurationManager.AppSettings["DomainName"].ToString()/UploadPic/@pro.ProjectPic"  width="180" height="130" /></a>
+                    <div class="proname">
+                        <a href="~/Project/Detail/@pro.ProjectID">@pro.ProjectName</a>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+
+<div class="mt15">
+    <div class="titlebg">
+        <h2>学术动态</h2> <a href="/List/4">更多>></a>
+    </div>
+
+    <div class="newslist">
+        <ul>
+            @foreach (var news in Model.XueShuDongTai)
+            {
+                <li><a href="~/News/Detail/@news.NewsID" title="@news.NewsTitle">@news.NewsTitle</a></li>
+            }
+        </ul>
+    </div>
+</div>
+
+<div class="mt15">
+    <div class="titlebg">
+        <h2>基地建设</h2> <a href="/List/5">更多>></a>
+    </div>
+
+    <div class="newslist">
+        <ul>
+            @foreach (var news in Model.JiDiJianShe)
+            {
+                <li><a href="~/News/Detail/@news.NewsID" title="@news.NewsTitle">@news.NewsTitle</a></li>
+            }
+        </ul>
+    </div>
+</div>
+
+<div class="mt15">
+    <div class="titlebg">
+        <h2>入选技术</h2> <a href="/List/6">更多>></a>
+    </div>
+
+    <div class="newslist">
+        <ul>
+            @foreach (var news in Model.RuXuanJiShu)
+            {
+                <li><a href="~/News/Detail/@news.NewsID" title="@news.NewsTitle">@news.NewsTitle</a></li>
+            }
+        </ul>
+    </div>
+</div>
+
+@*<div class="mt15">
+    <div class="titlebg">
+        <h2>证书查询</h2> <a href="#">更多>></a>
+    </div>
+    <div class="query">
+        <ul class="bui-list">
+            <li class="bui-btn bui-box clearactive">
+                <label class="bui-label" for="txtName">姓 &nbsp; &nbsp; &nbsp;名：</label>
+                <div class="span1">
+                    <div class="bui-input user-input">
+                        <input id="txtName" type="text" class="bui-input" value="" placeholder="请输入姓名">
+                    </div>
+                </div>
+            </li>
+            <li class="bui-btn bui-box clearactive">
+                <label class="bui-label" for="txtCertNo">证书编号：</label>
+                <div class="span1">
+                    <div class="bui-input user-input">
+                        <input id="txtCertNo" type="text" class="bui-input" value="" placeholder="请输入证书编号">
+                    </div>
+                </div>
+            </li>
+            <li class="bui-btn bui-box clearactive">
+                <label class="bui-label" for="txtCode">验&nbsp;证&nbsp;码：</label>
+                <div class="span1">
+                    <div  class="bui-input user-input">
+                        <input id="txtCode" type="text"  class="bui-input" placeholder="请输入验证码">  <input type="button" id="code" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="bui-btn primary btnsubmit"  onclick="CertSearch()">查询</div>
+ 
+        <script type="text/javascript">
+            function CertSearch() {
+                var defaultText = "请输入证书编号";
+
+                var name = $("#txtName").val().trim();
+                var certNo = $("#txtCertNo").val().trim();
+
+                if ($("#txtName").val() == "") {
+                    alert("请输入姓名");
+                    $("#txtName").focus();
+                    return;
+                }
+
+
+                if ($("#txtCertNo").val() == "") {
+                    alert("请输入证书编号");
+                    $("#txtCertNo").focus();
+                    return;
+                }
+
+                var inputCode = $("#txtCode").val().toUpperCase(); //取得输入的验证码并转化为大写
+
+                if (inputCode.length == 0) //若输入的验证码长度为0
+                {
+                    alert("请输入验证码！"); //则弹出请输入验证码
+                }
+                else if (inputCode != codes.toUpperCase()) //若输入的验证码与产生的验证码不一致时
+                {
+                    alert("验证码输入错误！请重新输入"); //则弹出验证码输入错误
+                    change();//刷新验证码
+                    $("#txtCode").val("");//清空文本框
+                }
+                else //输入正确时
+                {
+                    location.href = "/CertSearch/Result/?Name=" + name + "&CertNo=" + certNo;
+                }
+            }
+
+            function change() {
+                code = $("#code");
+                // 验证码组成库
+                var arrays = new Array(
+                    '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
+                    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+                    'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+                    'u', 'v', 'w', 'x', 'y', 'z',
+                    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+                    'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+                    'U', 'V', 'W', 'X', 'Y', 'Z'
+                );
+                codes = '';// 重新初始化验证码
+                for (var i = 0; i < 4; i++) {
+                    // 随机获取一个数组的下标
+                    var r = parseInt(Math.random() * arrays.length);
+                    codes += arrays[r];
+                }
+                // 验证码添加到input里
+                code.val(codes);
+            }
+
+            change();
+            code.click(change);
+
+            //单击验证
+            $("#check").click(function () {
+
+            });
+        </script>
+    </div>
+</div>*@
+
+<div class="mt15">
+    <div class="titlebg">
+        <h2>政策法规</h2> <a href="/List/8">更多>></a>
+    </div>
+
+    <div class="newslist">
+        <ul>
+            @foreach (var news in Model.ZhengCeFaGui)
+            {
+                <li><a href="~/News/Detail/@news.NewsID" title="@news.NewsTitle">@news.NewsTitle</a></li>
+            }
+        </ul>
+    </div>
+</div>
+
+<div class="mt15">
+    <div class="titlebg">
+        <h2>会员中心</h2> <a href="/List/135">更多>></a>
+    </div>
+
+    <div class="newslist">
+        <ul>
+            @foreach (var news in Model.HuiYuanZhongXin)
+            {
+                <li><a href="~/News/Detail/@news.NewsID" title="@news.NewsTitle">@news.NewsTitle</a></li>
+            }
+        </ul>
+    </div>
+</div>
+
+<div class="mt15">
+    <div class="titlebg">
+        <h2>视频中心</h2> <a href="/Video/List/0">更多>></a>
+    </div>
+
+
+    <div class="videoes">
+        <div class="bui-fluid-space">
+
+            @foreach (var video in Model.ShiPinZhongXin)
+            {
+                <div class="span6">
+                    <a href="~/Video/Detail/@video.VideoID">
+                        <img src="@System.Configuration.ConfigurationManager.AppSettings["DomainName"].ToString()/UploadPic/@video.VideoFilePath"  width="180" height="130" />
+                        <div class="proname">@video.VideoName</div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

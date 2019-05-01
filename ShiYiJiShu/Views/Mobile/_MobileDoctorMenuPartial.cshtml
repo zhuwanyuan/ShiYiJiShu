@@ -1,0 +1,28 @@
+﻿@model ShiYiJiShu.Models.DoctorClassListModel
+ 
+
+<div class="category" id="mobilemenu">
+    <ul class="bui-list">
+        @foreach (var doctorClass in Model.DoctorClassList)
+        {
+            <li class="bui-btn-title">
+                @doctorClass.BigClass.ClassName
+            </li>
+
+            foreach (var smallclass in doctorClass.SmallClassList)
+            {
+
+                <li class="bui-btn bui-box">
+                    <div class="span1">
+                        <a href="~/Doctor/List/@smallclass.ClassID/1" @if (smallclass.ClassID == Model.CurrentClassID) { @Html.Raw("class='sel'") ; }>@smallclass.ClassName</a>
+                    </div>
+                    <i class="icon-listright"></i>
+                </li>
+
+            }
+        }
+
+    </ul>
+</div>
+
+ 

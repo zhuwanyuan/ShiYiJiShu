@@ -1,0 +1,20 @@
+﻿@model ShiYiJiShu.Models.NewsMenuModel
+<div class="leftmenu">
+    <div class="top">@Model.TopClassName</div>
+
+    @foreach (var newsclass in Model.ClassList)
+    {
+        <div class="firstclass">@newsclass.NewsClass.ClassName</div>
+        <div class="subclass">
+            <ul>
+                @foreach (var subclass in newsclass.SubNewsClassList)
+                {
+                    <li>
+                        <a href="~/@Model.RouteName/@subclass.ClassID" @if (subclass.ClassID == Model.CurrentClassID) { @Html.Raw("class='sel'") ; }>@subclass.ClassName</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+</div>
+

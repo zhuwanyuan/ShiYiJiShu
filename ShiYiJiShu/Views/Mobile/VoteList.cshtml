@@ -1,0 +1,31 @@
+﻿@model ShiYiJiShu.Models.VoteListModel
+@{
+    ViewBag.Title = "VoteList";
+    Layout = "~/Views/Shared/_LayoutMobile.cshtml";
+}
+
+<div class="content">
+    <div class="titlebg3"><h2>网络投票</h2></div>
+
+    <div class="votelist">
+        <div class="bui-fluid-space">
+            @foreach (var vote in Model.StaffList)
+            {
+                <div class="span6">
+                    <a href="@vote.LinkUrl"><img src="@System.Configuration.ConfigurationManager.AppSettings["DomainName"].ToString()/UploadPic/@vote.StaffPhoto" /></a>
+
+                    <div class="countpanel" onclick="addvote('@vote.StaffID')">
+                        <div class="btnadd"></div>
+                        <div class="lbcount" id="btn_@vote.StaffID" value="@vote.VoteCount">@vote.VoteCount</div>
+                    </div>
+
+                    <div class="clear"></div>
+                </div>
+            }
+        </div>
+        <div class="pagelink">@Html.Raw(Model.PageLink)</div>
+    </div>
+</div>
+
+
+

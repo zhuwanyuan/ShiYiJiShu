@@ -1,0 +1,33 @@
+﻿@model ShiYiJiShu.Models.NewsListModel
+@{
+    ViewBag.Title = "NewsList";
+    Layout = "~/Views/Shared/_LayoutMobile.cshtml";
+}
+
+<div class="content">
+    <div class="titlebg">
+        <h2>@Model.ClassName</h2>
+
+        @if (Model.HasSubClass)
+        {
+            <span onclick="openmenu()"><img src="~/Images/mobile/category.png" width="25" /></span>
+        }
+    </div>
+ 
+        @if (Model.HasSubClass)
+        {
+            @Html.Action("GetNewsMenuPartial", "News", new { topClassID = Model.TopClassID, currentClassID = Model.ClassID, routeName = "List" })
+        }
+
+        <div class="list">
+            <ul>
+                @foreach (var news in Model.List)
+                {
+                    <li><a href="~/News/Detail/@news.NewsID" title="@news.NewsTitle">@news.NewsTitle</a></li>
+                }
+            </ul>
+        </div>
+
+        <div class="pagelink">@Html.Raw(Model.PageLink)</div>
+</div>
+

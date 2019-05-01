@@ -1,0 +1,43 @@
+﻿@model ShiYiJiShu.Models.VideoListModel
+@{
+    ViewBag.Title = Model.ClassName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="mt15">
+    <div class="left">
+        @Html.Action("GetNewsMenuPartial", "News", new { topClassID = Model.TopClassID, currentClassID = Model.ClassID, routeName = "Video/List" })
+    </div>
+
+    <div class="colmain">
+        <div class="titlebg"><h2>@Model.TopClassName</h2> <span>@*<img src="~/Images/icon-home.png" />*@当前位置：首页 > @Model.TopClassName</span> </div>
+
+        <div class="videolist">
+            <ul>
+                @foreach (var video in Model.VideoList)
+                {
+                    <li>
+                        <div class="pic">
+                            <a href="~/Video/Detail/@video.VideoID">
+                                <img src="~/uploadpic/@video.VideoFilePath" width="160" height="110" class="thumbnail" />
+                                @*<span class="vicon"><img src="~/images/play-icon.png" /></span>*@
+                            </a>
+                        </div>
+                        <div class="text">
+                            <div class="videoname"><a href="~/Video/Detail/@video.VideoID">@video.VideoName</a></div>
+                            <div class="tag"> </div>
+                            <div class="cinfo"><span class="fl">@video.AddDate</span><span class="fr">已播放 @video.HitCount 次</span></div>
+                        </div>
+
+                    </li>
+                }
+            </ul>
+
+            <div class="clear"></div>
+
+            <div class="pagelink">@Html.Raw(Model.PageLink)</div>
+        </div>
+
+    </div>
+    <div class="clear"></div>
+</div>

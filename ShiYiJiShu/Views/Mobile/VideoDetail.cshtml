@@ -1,0 +1,26 @@
+﻿@model ShiYiJiShu.Models.VideoDetailModel
+@{
+    ViewBag.Title = "VideoDetail";
+    Layout = "~/Views/Shared/_LayoutMobile.cshtml";
+}
+
+<div class="content">
+    <div class="titlebg"><h2>@Model.TopClassName</h2>  </div>
+
+    <div class="videodetail">
+        <div class="videotitle">
+            @Model.Video.VideoName
+        </div>
+
+        <div class="videoinfo"> 添加时间：@Model.Video.AddDate &nbsp; &nbsp; 阅读: @Model.Video.HitCount 次  </div>
+
+        <div class="clear"></div>
+
+        <div class="videocontent">@Html.Raw(Model.Video.VideoUrl)</div>
+    </div>
+
+</div>
+
+
+
+

@@ -1,0 +1,253 @@
+﻿body,div,img, p,span,ul,li,p,h1,h2{ font-size:12px; margin:0; padding:0; border:0; list-style:none; font-family:Arial}
+img,input,select{ vertical-align:middle; font-size:12px;  }
+ 
+a:link{ color:#000000; text-decoration:none; }
+a:visited{ color:#000000;text-decoration:none} 
+a:hover{ color:#0099FF;text-decoration:underline}
+a:active{ color:#000000;text-decoration:none} 
+
+a.top:link,a.top:visited{color:#000000; text-decoration:none}
+a.top:hover,a.top:active{color:#FFFFFF; text-decoration:underline}
+
+/* 顶部链接样式 */
+a.toplink:link,a.toplink:visited{color:#FFFFFF; font-weight:bold; text-decoration:none}
+a.toplink:hover,a.toplink:active{color:#FF9900; font-weight:bold; text-decoration:none}
+
+/* 按钮样式 */
+.btn{ width:53px; height:28px; background:url(../images/button1.gif) no-repeat center; border:none; vertical-align:middle; cursor:pointer;}
+.btn2{ width:45px; height:20px; background:url(../images/button4.gif) no-repeat center; border:none; vertical-align:middle; cursor:pointer;}
+.upload{ background:url(../images/Search.gif) no-repeat center; height:25px; line-height:25px; width:52px; color:#FFFFFF; border:none; vertical-align:middle; cursor:pointer }
+
+/* 输入框样式 */
+.txtbox1{ border:#CDCDCD 1px solid; height:26px; font-size:12px; line-height:26px; padding-left:3px; color:#333333; vertical-align:middle}
+.txtbox{ border:#C8C8C8 1px solid; font-size:12px; height:28px; line-height:28px;  padding-left:5px; color:#333333; vertical-align:middle;}
+
+.mt5{ margin-top:5px}
+.mt8{ margin-top:8px}
+.mt10{ margin-top:10px}
+.mt15{ margin-top:15px}
+.space{ height:10px; font:0}
+.fl{ float:left}
+.fr{ float:right}
+.tl{ text-align:left}
+.tr{ text-align:right}
+
+.w30{ width:30px}
+.w40{ width:40px}
+.w50{ width:50px}
+.w60{ width:60px}
+.w80{ width:80px}
+.w90{ width:90px}
+.w100{ width:100px}
+.w110{ width:110px}
+.w120{ width:120px}
+.w130{ width:130px}
+.w140{ width:140px}
+.w150{ width:150px}
+.w200{ width:200px}
+.w600{ width:600px}
+.h60 { height:60px }
+
+.red{ color:#FF0000}
+.green{ color:green}
+
+
+.clear{ clear:both; height:0; font-size:0; overflow:hidden}
+
+.main{ width:100%}
+.topbg{ background:url(../images/admin_08.gif) repeat-x center; height:83px}
+.topbg .logo{ width:187px; float:left}
+.topbg .rcontent{ width:300px; float:right; background:url(../images/admin_02.gif) no-repeat; height:82px; line-height:40px; }
+
+.topbg2{ background:url(../images/admin_06.gif) repeat-x center; height:39px; line-height:39px}
+.topbg2 .webname{ background:url(../images/admin_05.gif) no-repeat; width:230px; height:39px; line-height:35px; padding-left:10px; float:left}
+.topbg2 .toplink ul li{ width:80px; float:left; text-align:center }
+.topbg2 .toplink ul li.line{ width:18px; height:39px; background:url(../images/admin_07.gif) no-repeat center}
+
+.left{ width:180px; margin-left:auto; margin-right:auto; margin-top:5px; background:#E2F8FF; padding-bottom:20px }
+.left .submenu{ background:url(../images/nav03.gif) no-repeat center; color:#FFFFFF; font-weight:bold; height:27px; line-height:27px; padding-left:15px; overflow:hidden; display:block;  }
+.left .submenu img{ vertical-align:middle;   }
+.left .submenu a{ color:#FFFFFF; font-weight:bold; vertical-align:middle; margin-left:4px  }
+
+.left .menu ul {margin:6px auto; width:175px}
+.left .menu ul li{ height:26px; line-height:26px; padding-left:20px; }
+.left a{ text-decoration:none; color:#000000; margin-left:3px}
+
+.right{  border:#AFECFE 1px solid; border-top:none; margin-top:5px; padding-bottom:20px;}
+.right .top{ background:url(../images/admin_11.gif) repeat-x center; height:27px; line-height:27px}
+.right .top .title{ width:150px; float:left; color:#FFFFFF; font-weight:bold; padding-left:20px}
+.right .top .rimg{ width:197px; float:right}
+
+.right .about{ height:60px; line-height:60px; text-align:center; border:#AFECFE 1px solid; background:#E1F8FE; margin-top:10px}
+.right .pagelink{ text-align:center; height:30px; line-height:30px; margin-top:8px; color:#666666}
+
+.right .proclass{ width:800px; margin-left:auto; margin-right:auto; margin-top:20px; background:#f5f9ff; border:#d5e4fa 1px solid}
+.right .proclass .cat{ width:195px; float:left; height:300px; border-right:#d5e4fa 1px solid; overflow:auto; font-family:"宋体"; background:#FFFFFF}
+.right .proclass .cat .cat1 { border-bottom:#EEEEEE 1px dashed;}
+.right .proclass .cat .cat1 { height:30px; line-height:30px; padding-left:15px; color:#3366cc; }
+.right .proclass .cat .cat1 a{ color:#3366cc; text-decoration:none ;blr:expression(this.onFocus=this.blur());outline:none}
+
+.right .proclass .cat01{ border-left:#d5e4fa 1px solid; margin-left:25px}
+
+.right .proclass .catlist{ width:170px; margin-left:auto; margin-right:auto}
+.right .proclass .catlist a{ height:24px; line-height:24px; padding-left:20px; cursor:pointer; display:block; text-decoration:none; blr:expression(this.onFocus=this.blur());outline:none; }
+.right .proclass .catlist a:hover{ color:#000000}
+.right .proclass .catlist a.withchild{  background:url(../images/arrow.jpg) no-repeat left; background-position:150px; }
+.right .proclass .catlist a.nochild{   }
+.right .proclass .catlist .focus{ border:#82bce0 1px dotted; background:#dff1fb; height:22px; line-height:22px }
+
+.right .selpath{ width:760px; margin-left:auto; margin-right:auto; margin-top:10px; height:30px; line-height:30px; background:#fffaf2; border:#fedbab 1px solid; color:#444444; padding-left:40px}
+
+.right .add{ height:35px; line-height:35px; text-align:center; margin-top:15px}
+.btn_add{ height:30px; line-height:30px; width:120px; background:url(../images/btn_submit.jpg) no-repeat center; text-align:center; font-size:14px; color:#FFFFFF; border:none; font-weight:bold; cursor:pointer }
+ 
+.right .node{ height:26px; line-height:26px; padding-left:10px; width:200px; color:#333333 }
+.right .node img{ vertical-align:middle}
+.right .nodec{ padding-left:30px; color:#666666}
+.right .nodec ul{ margin-left:40px; }
+.right .nodec ul li{ height:26px; line-height:26px; color:#333333 }
+ 
+ 
+.item{ line-height:34px} 
+.picitem{ height:60px; line-height:60px} 
+
+.right .content .classname{ height:30px; line-height:30px; text-align:left; width:750px; margin:0 auto; background:#C1EDFB; font-weight:bold; color:#AD8634; margin-top:10px; padding-left:30px}
+
+.right .tip{ height:20px; line-height:20px; text-align:center; color:#FF0000; margin-top:10px; font-family:"宋体" }
+
+.bottom{ height:105px; line-height:105px; background:url(../images/index_14.gif) repeat-x center; text-align:center; margin-top:10px}
+
+/* 列表页面表格样式 */
+.tb{  width:96%; margin:10px auto 0 auto; background:#EFEFEF; }
+.tb td.head{ background:url(../images/tb_tr_bg.gif) repeat-x top; text-align:center; height:30px; line-height:30px; color:#666666}
+.tb td.td1{ background:#FFFFFF; height:40px; line-height:40px; color:#303030; text-align:center}
+.tb td.td01{ background:#FFFFFF; line-height:35px; color:#303030; padding-left:30px; padding-top:5px; padding-bottom:5px; }
+.tb td.td2{ background:#FCFCFC; height:40px; line-height:40px; color:#303030; text-align:center}
+.tb td.td02{ background:#FCFCFC; line-height:28px; color:#303030; padding-left:30px; padding-top:5px; padding-bottom:5px; }
+.tb td ul.plist li{ height:40px; line-height:40px;}
+.tb td p{ margin-left:12px; text-align:left}
+.tb td span.red{ color:#FF0000}
+.tb td span.title{ font-family:"微软雅黑"; float:left; margin-left:20px; color:#000000}
+.tb td a{ color:#333333; }
+
+.bcount{ color:#999999; text-decoration:inherit}
+
+.mName{ font-size:20px; font-family:"微软雅黑"}
+
+
+.tbProduct{  width:96%; margin:10px auto 0 auto; background:#EFEFEF; }
+.tbProduct td.head{ background:url(../images/tb_tr_bg.gif) repeat-x top; text-align:center; height:30px; line-height:30px; color:#666666}
+.tbProduct td.td1{ background:#FFFFFF; height:60px; color:#303030; text-align:center}
+.tbProduct td.td2{ background:#FCFCFC; height:60px; color:#303030; text-align:center}
+.tbProduct td p{ margin-left:10px; text-align:left}
+.tbProduct td span.red{ color:#FF0000}
+.tbProduct td a{ color:#999999}
+
+.batch{ width:96%; height:40px; line-height:40px; text-align:left;  margin-left:auto; margin-right:auto}
+
+.tbtn{ height:25px; line-height:25px; width:48px; background:url(../images/button_bg1.jpg) no-repeat center; border:none; text-align:center; color:#000000; font-family:"宋体"}
+.tbtn2{ height:25px; line-height:25px; width:65px; background:url(../images/button_bg2.jpg) no-repeat center; border:none; text-align:center; color:#000000; font-family:"宋体"}
+
+.path{ height:35px; line-height:35px; background:url(../images/dot.jpg) no-repeat left; background-position:6px 8px; width:96%; margin-top:15px; margin-left:auto; margin-right:auto; margin-bottom:15px; color:#333333; font-family:"宋体"}
+.path .text{ margin-left:22px; float:left; }
+.path .text a{ font-size:12px}
+.path input{ vertical-align:middle}
+.path a{ color:#333333}
+
+.path2{ height:24px; line-height:24px; width:96%; margin-top:15px; margin-left:auto; margin-right:auto; color:#333333; font-family:"宋体"}
+.path2 .line{ margin-left:10px; margin-right:10px}
+.path2 .sel{ font-weight:bold; color:#FF9900; }
+
+.addform{ height:40px; line-height:40px; width:96%; margin-top:10px; margin-left:auto; margin-right:auto; color:#333333; font-family:"宋体"}
+.addform .line{ margin-left:10px; margin-right:10px}
+.addform .sel{ font-weight:bold; color:#FF9900; }
+
+
+/* 添加页面表格样式 */
+.tb2{  width:96%; background:#EEEEEE; margin:10px auto 0 auto;  }
+.tb2 td{ background:#f8f8f8; color:#666666; line-height:28px; padding:8px 12px}
+.tb2 td.l{ text-align:right; background:url(../images/tb_leftbg.gif) repeat-y right }
+.tb2 td.r{ text-align:left; background:#FFFFFF; padding-left:10px  }
+.tb2 td span{ color:#FF0000; font-family:"宋体"}
+
+.tb2 td select{ height:28px; line-height:28px; }
+
+
+.tbpic{  width:96%; margin:10px auto 0 auto; background:#EFEFEF; }
+.tbpic td.head{ background:url(../images/tb_tr_bg.gif) repeat-x top; text-align:center; height:30px; line-height:30px; color:#666666}
+.tbpic td.td{ background:#FFFFFF; height:32px; line-height:32px; color:#303030; text-align:center; padding:6px 8px}
+.tbpic td.td p{ text-align:left} 
+.tbpic td.td .pic{ border:#EEEEEE 1px solid; padding:2px}
+ 
+
+.list ul{ width:630px; } 
+.list ul li{ width:125px; float:left; height:28px; line-height:28px; }
+.list ul li p.checkbox{ width:20px; float:left; }
+.list ul li p.color{ width:20px; float:left; padding-top:2px}
+.list ul li p.colorname{ width:70px; float:left; }
+
+#tbUpload{ background:#d7d7d7; width:400px; margin-top:10px; margin-bottom:10px}
+#tbUpload tr{ display:none}
+#tbUpload tr td{ height:22px; line-height:22px; background:#FFFFFF; text-align:center}
+#tbUpload tr td.head{ height:20px; line-height:20px; background:#ededed}
+#tbUpload tr td p.color{ width:20px; float:left; padding-top:4px}
+#tbUpload tr td p.colorname{ float:left; }
+
+.tbSize{ background:#d7d7d7; width:690px; margin-bottom:10px; display:none }
+.tbSize tr td{ height:22px; line-height:22px; background:#FFFFFF; text-align:center}
+.tbSize tr td.head{ height:24px; line-height:24px; background:#ededed}
+.tbSize tr td p.color{ width:20px; float:left; padding-top:4px}
+.tbSize tr td p.colorname{ float:left; }
+
+#tbTaoCan{ background:#d7d7d7; width:700px; margin-top:10px; margin-bottom:10px}
+#tbTaoCan tr{ display:none}
+#tbTaoCan tr td{ height:22px; line-height:22px; background:#FFFFFF; text-align:center}
+#tbTaoCan tr td.head{ height:24px; line-height:24px; background:#ededed}
+#tbTaoCan tr td p.color{ width:20px; float:left; padding-top:4px}
+#tbTaoCan tr td p.colorname{ float:left; }
+
+
+.sizelist ul li { height:28px; line-height:28px; text-align:left; display:none}
+.sizelist ul li span.col{  float:left; display:block}
+
+.block{ width:14px; height:14px; display:block; border:#EEEEEE 1px solid}
+
+.msg{ text-align:center; margin-top:5px; height:23px; line-height:23px; color:#FF0000; }
+
+
+/* 登录页面样式 */
+.login_bg{ background:url(../images/index_02.gif) repeat-x;overflow:auto}
+.login_bottom{ background:url(../images/index_14.gif) repeat-x; height:105px}
+.login_dl{ background:url(../images/index_07.gif); width:333px; height:208px;margin-left:50px;margin-top:60px; overflow:auto}
+.fl{ float:left}
+.fr{ float:right}
+ 
+.h100{ height:100%}
+.w190{ width:190px}
+.h83{ height:83px}
+.h39{ height:39px}
+.h485{ height:485px}
+.w800{ width:800px}
+.w1000{ width:1000px}
+.mt8{ margin-top:8px}
+.mb8{ margin-bottom:8px}
+.mt15{ margin-top:15px}
+.mt100{margin:100px auto auto auto}
+.ml8{ margin-left:8px}
+.ml30{ margin-left:30px}
+.ml20{ margin-left:20px}
+.table{ margin-top:45px; margin-left:110px; font-family:Arial, Helvetica, sans-serif}
+.table input{ font-family:Arial  }
+
+.search{ height:25px; line-height:25px; width:96%; margin-left:auto; margin-right:auto; margin-top:10px; }
+.searchbtn{ height:25px; width:67px; background:url(../images/search1.jpg) no-repeat center; border:none; color:#333333; cursor:pointer}
+.searchbtn:hover{ background:url(../images/search2.jpg) no-repeat center; cursor:pointer}
+ 
+.pager{ width:96%; margin-left:auto; margin-right:auto; margin-top:20px; line-height:45px; text-align:center; font-family:"宋体"; }
+.pager a.link{  padding:12px 15px; text-decoration:none; border:#dddddd 1px solid; color:#333333; text-align:center; font-size:12px; font-family:"微软雅黑" }
+.pager a.link:hover{ padding:12px 15px;  text-decoration:none; border:#ff9900 1px solid; color:#333333; background:#ffffcc; text-align:center; font-family:"微软雅黑"  }
+.pager span.current{ padding:12px 15px;  border:#ff9933 1px solid; background:#ff9933; color:#ffffff; text-align:center; font-size:12px; font-weight:bold; font-family:"微软雅黑" }
+.pager span.dotted{ padding:12px 15px;  color:#666666; border:#f3f3f3 1px solid; text-align:center; font-size:12px; font-family:"微软雅黑"}
+.pager span.beginend{ padding:12px 15px;  border:#DEDEDE 1px solid; color:#cccccc; text-align:center; font-size:12px; font-family:"微软雅黑"}
+
+ 

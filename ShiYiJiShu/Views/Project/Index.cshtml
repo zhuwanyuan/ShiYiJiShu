@@ -1,0 +1,52 @@
+﻿@model ShiYiJiShu.Models.ProjectListModel
+@{
+    ViewBag.Title = Model.TopClassName + " - ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+    function openRegForm(projectid) {
+        var index = layer.open({
+            type: 2,
+            
+            area: ['500px', '600px'],
+            fixed: false, //不固定
+            title: false,
+            content: '../../Project/Register/?projectid=' + projectid
+        });
+    }
+</script>
+
+<div class="mt15">
+    <div class="left">
+        @Html.Action("GetNewsMenuPartial", "News", new { topClassID = Model.TopClassID, currentClassID = Model.ClassID, routeName = "Project/List" })
+    </div>
+
+    <div class="colmain">
+        <div class="titlebg"><h2>@Model.TopClassName</h2> <span>@*<img src="~/Images/icon-home.png" />*@当前位置：首页 > @Model.TopClassName</span> </div>
+         
+        <div class="projectlist">
+            <ul>
+                @foreach (var project in Model.ProjectList)
+                {
+                    <li>
+                        <a href="/Project/Detail/@project.ProjectID" title="@project.ProjectName">
+                            <img src="~/UploadPic/@project.ProjectPic" width="160" height="110" />
+                        </a>
+                        <p class="vname"><a href="/Project/Detail/@project.ProjectID" title="@project.ProjectName">@project.ProjectName</a></p>
+
+                        <div class="bmbtn">
+                            <input type="button" value="报名学习" onclick="openRegForm('@project.ProjectID','@project.ProjectName')"  />
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <div class="pagelink">@Html.Raw(Model.PageLink)</div>
+    </div>
+
+    <div class="clear"></div>
+</div>
+
+

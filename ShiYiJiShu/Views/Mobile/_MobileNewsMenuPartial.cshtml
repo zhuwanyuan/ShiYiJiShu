@@ -1,0 +1,35 @@
+﻿@model ShiYiJiShu.Models.NewsMenuModel
+
+<div class="category" id="mobilemenu">
+    <ul class="bui-list">
+        @foreach (var newsclass in Model.ClassList)
+        {
+            <li class="bui-btn-title">
+                @newsclass.NewsClass.ClassName
+            </li>
+
+            foreach (var subclass in newsclass.SubNewsClassList)
+            {
+                <li class="bui-btn bui-box">
+                    <div class="span1">
+                        @if (subclass.ClassType == "3")
+                        {
+                            <a href="~/Info/@subclass.ClassID" @if (subclass.ClassID == Model.CurrentClassID) { @Html.Raw("class='sel'") ; }>@subclass.ClassName</a>
+                        }
+                        else if (subclass.ClassType == "4")
+                        {
+                            <a href="~/List/@subclass.ClassID" @if (subclass.ClassID == Model.CurrentClassID) { @Html.Raw("class='sel'") ; }>@subclass.ClassName</a>
+                        }
+                        else
+                        {
+                            <a href="~/@Model.RouteName/@subclass.ClassID" @if (subclass.ClassID == Model.CurrentClassID) { @Html.Raw("class='sel'") ; }>@subclass.ClassName</a>
+                        }
+                    </div>
+                    <i class="icon-listright"></i>
+                </li>
+            }
+        }
+    </ul>
+</div>
+
+

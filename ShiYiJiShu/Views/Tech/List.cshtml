@@ -1,0 +1,45 @@
+﻿@model ShiYiJiShu.Models.TechListModel
+@{
+    ViewBag.Title = Model.ClassName + " - " + System.Configuration.ConfigurationManager.AppSettings["WebSiteName"].ToString();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int index = 1;
+}
+ 
+<div class="mt15">
+    <div class="leftmenu">
+        @Html.Action("techMenuPartial", "Tech")
+    </div>
+
+    <div class="mainRight">
+        <div class="list">
+            <div class="titlebg2"><h2>@Model.ClassName</h2></div>
+            @if (Model.techs.Count() > 0)
+            {
+                <table class="tbDepartmentList" cellspacing="1">
+                    <tr>
+                        <td class="head " style="width:50px">序号</td>
+                        <td class="head " style="width:350px">技术（产品、设备）名称</td>
+                        <td class="head ">单位名称</td>
+                    </tr>
+
+                    @foreach (var tech in Model.techs)
+                    {
+                        <tr>
+                            <td class="td1"><p>@index</p></td>
+                            <td class="td1"><a @if (@tech.TechNameLink != null && @tech.TechNameLink != "#") { @Html.Raw("href='" + @tech.TechNameLink + "' target='_blank' class='sel'")    }>@tech.TechName</a></td>
+                            <td class="td1">
+                                <a @if (@tech.TechCompanyLink != null && @tech.TechCompanyLink != "#") { @Html.Raw("href='" + @tech.TechCompanyLink + "' target='_blank' class='sel'")   }>@tech.TechCompany</a>
+                            </td>
+                        </tr>
+                        index++;
+                    }
+                </table>
+            }
+
+            <div class="pagelink">@Html.Raw(Model.PageLink)</div>
+
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+

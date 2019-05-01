@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShiYiJiShu.Data", "ShiYiJiShu.Data\ShiYiJiShu.Data.csproj", "{20C5CF8F-AB92-4517-AE02-EBD1546F5B31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShiYiJiShu.Model", "ShiYiJiShu.Model\ShiYiJiShu.Model.csproj", "{B2C7053C-7510-4519-A0BE-EAC24EB730AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{53EEF119-7DBA-4CFB-966C-576489DBDFE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShiYiJiShu", "ShiYiJiShu\ShiYiJiShu.csproj", "{D603957F-61DC-4425-863F-C9FA78CAEAF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20C5CF8F-AB92-4517-AE02-EBD1546F5B31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20C5CF8F-AB92-4517-AE02-EBD1546F5B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20C5CF8F-AB92-4517-AE02-EBD1546F5B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20C5CF8F-AB92-4517-AE02-EBD1546F5B31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C7053C-7510-4519-A0BE-EAC24EB730AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C7053C-7510-4519-A0BE-EAC24EB730AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C7053C-7510-4519-A0BE-EAC24EB730AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C7053C-7510-4519-A0BE-EAC24EB730AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53EEF119-7DBA-4CFB-966C-576489DBDFE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53EEF119-7DBA-4CFB-966C-576489DBDFE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53EEF119-7DBA-4CFB-966C-576489DBDFE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53EEF119-7DBA-4CFB-966C-576489DBDFE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D603957F-61DC-4425-863F-C9FA78CAEAF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D603957F-61DC-4425-863F-C9FA78CAEAF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D603957F-61DC-4425-863F-C9FA78CAEAF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D603957F-61DC-4425-863F-C9FA78CAEAF0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F19D0199-DE7B-4FB7-920C-AB81534FAFFE}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://47.93.199.27:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Common\\Common.csproj
+		SccProjectName1 = Common
+		SccLocalPath1 = Common
+		SccProjectUniqueName2 = ShiYiJiShu.Data\\ShiYiJiShu.Data.csproj
+		SccProjectName2 = ShiYiJiShu.Data
+		SccLocalPath2 = ShiYiJiShu.Data
+		SccProjectUniqueName3 = ShiYiJiShu.Model\\ShiYiJiShu.Model.csproj
+		SccProjectName3 = ShiYiJiShu.Model
+		SccLocalPath3 = ShiYiJiShu.Model
+		SccProjectUniqueName4 = ShiYiJiShu\\ShiYiJiShu.csproj
+		SccProjectName4 = ShiYiJiShu
+		SccLocalPath4 = ShiYiJiShu
+	EndGlobalSection
+EndGlobal

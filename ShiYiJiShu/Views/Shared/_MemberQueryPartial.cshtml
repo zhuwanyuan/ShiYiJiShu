@@ -1,0 +1,46 @@
+﻿<div class="query">
+    <div class="header">会员资质查询</div>
+ 
+        <div class="form">
+            <input type="text" class="txtbox" id="txtCertNo" name="CertNo" value="请输入证书编号" /> <input type="button" onclick="Search();" class="btn" value="提交" />
+        </div>
+ 
+    <div class="buttonimg mt15">
+        <a href="~/List/51"><img src="~/images/button01.jpg" /></a>
+    </div>
+    <div class="buttonimg mt15">
+        <a href="~/Info/46"><img src="~/images/button02.jpg" /></a>
+    </div>
+
+    <div class="aboutus">
+        <ul>
+            <li><a href="~/Info/44">本会介绍</a></li>
+            <li><a href="~/Info/45">组织机构</a></li>
+            <li><a href="~/Info/47">机构人员</a></li>
+            <li><a href="~/Info/48">发展历史</a></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<script type="text/javascript" src="~/Scripts/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#txtCertNo").focus(function () {
+            this.value = "";
+        })
+    })
+
+    function Search() {
+        var defaultText = "请输入证书编号";
+
+        if ($("#txtCertNo").val() == defaultText || $("#txtCertNo").val() == "") {
+            alert(defaultText);
+            $("#txtCertNo").focus();
+            return;
+        }
+
+        location.href = "/CertSearch/Result/?certNo=" + $("#txtCertNo").val();
+    }
+
+</script>

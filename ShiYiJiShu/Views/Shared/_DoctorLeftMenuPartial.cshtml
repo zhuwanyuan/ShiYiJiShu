@@ -1,0 +1,23 @@
+﻿@model ShiYiJiShu.Models.DoctorClassListModel
+<div class="doctorleftmenu">
+    <div class="top">专家分类</div>
+
+    @foreach (var doctorClass in Model.DoctorClassList)
+    {
+        <div class="firstclass">@doctorClass.BigClass.ClassName</div>
+        <div class="subclass">
+            <ul>
+                @foreach (var smallclass in doctorClass.SmallClassList)
+                {
+                    <li>
+                        <a href="~/Doctor/List/@smallclass.ClassID/1" @if (smallclass.ClassID == Model.CurrentClassID) { @Html.Raw("class='sel'")   ; }>@smallclass.ClassName</a>
+                    </li>
+                }
+ 
+            </ul>
+            <div class="clear"></div>
+        </div>
+    }
+</div>
+
+ 
