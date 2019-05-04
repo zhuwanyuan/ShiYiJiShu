@@ -30,22 +30,18 @@ namespace ShiYiJiShu.Web_Master
                 if (userGrade == 2)
                 {
                     divGuanYuWoMen.Visible = false;
-                    //divZhuanJiaWeiYuanHui.Visible = false;
-
+     
                     divZhiNengBuMen.Visible = false;
-                    //divShiYiJiShu.Visible = false;
-
-                    //divHuiYuanZhongXin.Visible = false;
-                    //divXiangMuTuiGuang.Visible = false;
-
-                    //divShiPinZhongXin.Visible = false;
+ 
                     divTouPiaoGuanLi.Visible = false;
-                    //divZhengShuGuanLi.Visible = false;
+                    
                     divWangZhanGuanLi.Visible = false;
                     divZhuanJiaLeiBie.Visible = false;
                     divShiPinLeiBie.Visible = false;
                     divXiangMuLeiBie.Visible = false;
                     divTouPiaoGuanLi.Visible = false;
+
+                    divJiDiLeiBie.Visible = false;
                 }
 
                 //文章管理
@@ -78,26 +74,6 @@ namespace ShiYiJiShu.Web_Master
                 repZhiNengBuMen.DataSource = list28;
                 repZhiNengBuMen.DataBind();
 
-                
-                ////人群健康
-                //IEnumerable<NewsClass> list14 = service.GetSubClasses(14);
-                //repRenQunJianKang.DataSource = list14;
-                //repRenQunJianKang.DataBind();
-
-                ////保健专栏
-                //IEnumerable<NewsClass> list19 = service.GetSubClasses(19);
-                //repBaoJianZhuanLan.DataSource = list19;
-                //repBaoJianZhuanLan.DataBind();
- 
-                ////养生专栏
-                //IEnumerable<NewsClass> list24 = service.GetSubClasses(24);
-                //repYangShengZhuanLan.DataSource = list24;
-                //repYangShengZhuanLan.DataBind();
-
-                ////健康体检
-                //IEnumerable<NewsClass> list29 = service.GetSubClasses(29);
-                //repJianKangTiJian.DataSource = list29;
-                //repJianKangTiJian.DataBind();
             }
         }
 

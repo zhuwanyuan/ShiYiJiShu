@@ -86,6 +86,25 @@
           <Property Name="ClassID" Type="int" />
           <Property Name="HitCount" Type="int" />
         </EntityType>
+        <EntityType Name="JiDiJianShe">
+          <Key>
+            <PropertyRef Name="JiDiId" />
+          </Key>
+          <Property Name="JiDiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JiDiName" Type="nvarchar" MaxLength="200" />
+          <Property Name="JiDiCompany" Type="nvarchar" MaxLength="200" />
+          <Property Name="JiDiLeader" Type="nvarchar" MaxLength="50" />
+          <Property Name="JiDiJobContent" Type="nvarchar" MaxLength="500" />
+          <Property Name="JiDiIntro" Type="ntext" />
+          <Property Name="JiDiPic" Type="nvarchar" MaxLength="20" />
+          <Property Name="FirstClassID" Type="int" />
+          <Property Name="SecondClassID" Type="int" />
+          <Property Name="ActiveFlag" Type="int" />
+          <Property Name="TuiJian" Type="int" />
+          <Property Name="HitCount" Type="int" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="AddDateTime" Type="datetime" />
+        </EntityType>
         <!--生成过程中发现错误:
 警告 6002: 表/视图“ShiYiJiShu.dbo.Jobs”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="Jobs">
@@ -249,6 +268,7 @@
           <EntitySet Name="FocusPic" EntityType="Self.FocusPic" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FriendLink" EntityType="Self.FriendLink" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Info" EntityType="Self.Info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JiDiJianShe" EntityType="Self.JiDiJianShe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NewsClass" EntityType="Self.NewsClass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
@@ -522,6 +542,7 @@
           <EntitySet Name="Jobs" EntityType="Self.Job" />
           <EntitySet Name="Provinces" EntityType="Self.Province" />
           <EntitySet Name="ProjectRegisters" EntityType="ShiYiJiShuModel.ProjectRegister" />
+          <EntitySet Name="JiDiJianShes" EntityType="ShiYiJiShuModel.JiDiJianShe" />
         </EntityContainer>
         <EntityType Name="ProjectRegister">
           <Key>
@@ -535,6 +556,25 @@
           <Property Name="UserCompany" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="RegDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="JiDiJianShe">
+          <Key>
+            <PropertyRef Name="JiDiId" />
+          </Key>
+          <Property Name="JiDiId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JiDiName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="JiDiCompany" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="JiDiLeader" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JiDiJobContent" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="JiDiIntro" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="JiDiPic" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AddDateTime" Type="DateTime" Precision="3" />
+          <Property Name="FirstClassID" Type="Int32" />
+          <Property Name="SecondClassID" Type="Int32" />
+          <Property Name="ActiveFlag" Type="Int32" />
+          <Property Name="TuiJian" Type="Int32" />
+          <Property Name="HitCount" Type="Int32" />
+          <Property Name="UserID" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -788,6 +828,26 @@
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
                 <ScalarProperty Name="RegID" ColumnName="RegID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JiDiJianShes">
+            <EntityTypeMapping TypeName="ShiYiJiShuModel.JiDiJianShe">
+              <MappingFragment StoreEntitySet="JiDiJianShe">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="HitCount" ColumnName="HitCount" />
+                <ScalarProperty Name="TuiJian" ColumnName="TuiJian" />
+                <ScalarProperty Name="ActiveFlag" ColumnName="ActiveFlag" />
+                <ScalarProperty Name="SecondClassID" ColumnName="SecondClassID" />
+                <ScalarProperty Name="FirstClassID" ColumnName="FirstClassID" />
+                <ScalarProperty Name="AddDateTime" ColumnName="AddDateTime" />
+                <ScalarProperty Name="JiDiPic" ColumnName="JiDiPic" />
+                <ScalarProperty Name="JiDiIntro" ColumnName="JiDiIntro" />
+                <ScalarProperty Name="JiDiJobContent" ColumnName="JiDiJobContent" />
+                <ScalarProperty Name="JiDiLeader" ColumnName="JiDiLeader" />
+                <ScalarProperty Name="JiDiCompany" ColumnName="JiDiCompany" />
+                <ScalarProperty Name="JiDiName" ColumnName="JiDiName" />
+                <ScalarProperty Name="JiDiId" ColumnName="JiDiId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

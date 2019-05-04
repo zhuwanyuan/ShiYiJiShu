@@ -21,6 +21,7 @@
         <EntityTypeShape EntityType="ShiYiJiShuModel.Job" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ShiYiJiShuModel.Province" Width="1.5" PointX="10.75" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ShiYiJiShuModel.ProjectRegister" Width="1.5" PointX="2.75" PointY="6.375" />
+        <EntityTypeShape EntityType="ShiYiJiShuModel.JiDiJianShe" Width="1.5" PointX="0.75" PointY="8.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

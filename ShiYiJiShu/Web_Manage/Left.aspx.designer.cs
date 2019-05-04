@@ -193,6 +193,24 @@ namespace ShiYiJiShu.Web_Master {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divTouPiaoLeiBie;
         
         /// <summary>
+        /// divJiDiJianShe 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divJiDiJianShe;
+        
+        /// <summary>
+        /// divJiDiLeiBie 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divJiDiLeiBie;
+        
+        /// <summary>
         /// divZhengShuGuanLi 控件。
         /// </summary>
         /// <remarks>

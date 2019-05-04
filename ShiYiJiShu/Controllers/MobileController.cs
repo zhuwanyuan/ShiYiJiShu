@@ -25,7 +25,7 @@ namespace ShiYiJiShu.Controllers
 
              model.XueShuDongTai = _dateService.GetNewsListByClassID(4, 6);
 
-            model.JiDiJianShe = _dateService.GetNewsListByClassID(5, 6);
+            //model.JiDiJianShe = _dateService.GetNewsListByClassID(5, 6);
 
              model.RuXuanJiShu = _dateService.GetNewsListByClassID(6, 6);
 

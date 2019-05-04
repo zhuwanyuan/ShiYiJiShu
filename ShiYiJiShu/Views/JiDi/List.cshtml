@@ -1,0 +1,44 @@
+﻿@model ShiYiJiShu.Models.JiDiListModel
+@{
+    ViewBag.Title = Model.ClassName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="mt15">
+    <div class="left">
+        @Html.Action("GetNewsMenuPartial", "News", new { topClassID = Model.TopClassID, currentClassID = Model.ClassID, routeName = "JiDi/List" })
+    </div>
+
+    <div class="colmain">
+        <div class="titlebg"><h2>@Model.TopClassName</h2> <span> 当前位置：首页 > @Model.TopClassName</span> </div>
+
+        <div class="jidilist">
+            <ul>
+                @foreach (var jidi in Model.JiDiList)
+                {
+                    <li>
+                        <div class="pic">
+                            <a href="~/JiDi/Detail/@jidi.JiDiId">
+                                <img src="~/uploadpic/@jidi.JiDiPic" width="160" height="110" class="thumbnail" />
+                               
+                            </a>
+                        </div>
+                        <div class="text">
+                            <div class="jidiname"><a href="~/JiDi/Detail/@jidi.JiDiId">@jidi.JiDiName</a></div>
+                            <div class="jidicompany"><b>共建单位：</b> @jidi.JiDiCompany </div>
+                            <div class="jidileader"><b>基地负责人：</b> @jidi.JiDiLeader </div>
+                            <div class="jidijobcontent"><b>工作内容：</b> @jidi.JiDiJobContent </div>               
+                        </div>
+
+                    </li>
+                }
+            </ul>
+
+            <div class="clear"></div>
+
+            <div class="pagelink">@Html.Raw(Model.PageLink)</div>
+        </div>
+
+    </div>
+    <div class="clear"></div>
+</div>

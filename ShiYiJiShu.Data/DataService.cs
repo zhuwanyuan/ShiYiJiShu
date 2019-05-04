@@ -1195,5 +1195,139 @@ namespace ShiYiJiShu.Data
             return province;
         }
         #endregion
+
+        #region >>>JiDiJianShe<<<
+        //添加案例
+        public int AddJiDi(JiDiJianShe model)
+        {
+            context.JiDiJianShes.Add(model);
+            return context.SaveChanges();
+        }
+
+        //修改案例
+        public int UpdateJiDi(JiDiJianShe model)
+        {
+            JiDiJianShe jdModel = model;
+            return context.SaveChanges();
+        }
+
+        public int GetJiDiTotalCount(int classid)
+        {
+            int totalCount = 0;
+
+            if (classid == 0)
+            {
+                totalCount = context.JiDiJianShes.Count();
+            }
+            else
+            {
+                totalCount = context.JiDiJianShes.Where(x => x.SecondClassID == classid).Count();
+            }
+
+            return totalCount;
+        }
+
+        //根据案例ID获取案例
+        public JiDiJianShe GetJiDiByID(int jiDiId)
+        {
+            JiDiJianShe model = context.JiDiJianShes.FirstOrDefault(c => c.JiDiId == jiDiId);
+            return model;
+        }
+
+        //根据案例ID获取案例
+        public JiDiJianShe GetJiDiByTuiJian()
+        {
+            JiDiJianShe model = context.JiDiJianShes.OrderByDescending(x => x.AddDateTime).FirstOrDefault(c => c.TuiJian == 1);
+            return model;
+        }
+
+        //根据类别获取文章
+        public List<JiDiJianShe> GetJiDisByPageNum(int classid, int pageCount, int? currentPage)
+        {
+            int pageIndex = 1;
+            if (currentPage != null)
+            {
+                pageIndex = (int)currentPage;
+            }
+
+            int startNo = (pageIndex - 1) * pageCount;
+            if (startNo < 0)
+            {
+                startNo = 0;
+            }
+
+            List<JiDiJianShe> list = new List<JiDiJianShe>();
+
+            if (classid == 0)
+            {
+                list = context.JiDiJianShes.Where(x => x.ActiveFlag == 1).OrderByDescending(x => x.JiDiId).Skip(startNo).Take(pageCount).ToList<JiDiJianShe>();
+            }
+            else
+            {
+                list = context.JiDiJianShes.Where(x => x.SecondClassID == classid && x.ActiveFlag == 1).OrderByDescending(x => x.JiDiId).Skip(startNo).Take(pageCount).ToList<JiDiJianShe>();
+            }
+
+            return list;
+        }
+
+        //根据类别获取文章
+        public List<JiDiJianShe> GetJiDisByCount(int count)
+        {
+            var list = context.JiDiJianShes.Where(x => x.ActiveFlag == 1).OrderByDescending(x => x.JiDiId).Take(count).ToList<JiDiJianShe>();
+            return list;
+        }
+
+        //点击次数+1
+        public void AddJiDiHitCount(int jiDiId)
+        {
+            JiDiJianShe model = context.JiDiJianShes.Where(s => s.JiDiId == jiDiId).FirstOrDefault();
+            model.HitCount = model.HitCount + 1;
+            context.SaveChanges();
+        }
+
+        public List<JiDiJianShe> GetJiDisByAdminID(int adminid, int pageCount, int? currentPage)
+        {
+            int pageIndex = 1;
+            if (currentPage != null)
+            {
+                pageIndex = (int)currentPage;
+            }
+
+            int startNo = (pageIndex - 1) * pageCount;
+            if (startNo < 0)
+            {
+                startNo = 0;
+            }
+
+            List<JiDiJianShe> jidilist = new List<JiDiJianShe>();
+
+            if (adminid == 1) //高级管理员
+            {
+                jidilist = context.JiDiJianShes.OrderBy(x => x.ActiveFlag).ThenByDescending(c => c.JiDiId).Skip(startNo).Take(pageCount).ToList<JiDiJianShe>();
+            }
+            else //普通管理员
+            {
+                jidilist = context.JiDiJianShes.Where(c => c.UserID == adminid).OrderBy(x => x.ActiveFlag).ThenByDescending(c => c.JiDiId).Skip(startNo).Take(pageCount).ToList<JiDiJianShe>();
+            }
+
+            return jidilist;
+        }
+
+        public int GetJiDiTotalCountByAdminID(int adminid)
+        {
+            int count = 0;
+
+            if (adminid == 1) //高级管理员
+            {
+                count = context.JiDiJianShes.Count();
+            }
+            else //普通管理员
+            {
+                count = context.JiDiJianShes.Where(c => c.UserID == adminid).Count();
+            }
+
+            return count;
+        }
+        #endregion
     }
 }

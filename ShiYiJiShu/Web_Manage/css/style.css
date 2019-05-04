@@ -19,9 +19,10 @@ a.toplink:hover,a.toplink:active{color:#FF9900; font-weight:bold; text-decoratio
 .upload{ background:url(../images/Search.gif) no-repeat center; height:25px; line-height:25px; width:52px; color:#FFFFFF; border:none; vertical-align:middle; cursor:pointer }
 
 /* 输入框样式 */
-.txtbox1{ border:#CDCDCD 1px solid; height:26px; font-size:12px; line-height:26px; padding-left:3px; color:#333333; vertical-align:middle}
-.txtbox{ border:#C8C8C8 1px solid; font-size:12px; height:28px; line-height:28px;  padding-left:5px; color:#333333; vertical-align:middle;}
+.txtbox1 { border:#CDCDCD 1px solid; height:26px; font-size:12px; line-height:26px; padding-left:3px; color:#333333; vertical-align:middle}
+.txtbox { border:#C8C8C8 1px solid; font-size:12px; height:28px; line-height:28px;  padding-left:5px; color:#333333; vertical-align:middle;}
 
+ 
 .mt5{ margin-top:5px}
 .mt8{ margin-top:8px}
 .mt10{ margin-top:10px}
@@ -85,7 +86,7 @@ a.toplink:hover,a.toplink:active{color:#FF9900; font-weight:bold; text-decoratio
 .right .proclass .cat{ width:195px; float:left; height:300px; border-right:#d5e4fa 1px solid; overflow:auto; font-family:"宋体"; background:#FFFFFF}
 .right .proclass .cat .cat1 { border-bottom:#EEEEEE 1px dashed;}
 .right .proclass .cat .cat1 { height:30px; line-height:30px; padding-left:15px; color:#3366cc; }
-.right .proclass .cat .cat1 a{ color:#3366cc; text-decoration:none ;blr:expression(this.onFocus=this.blur());outline:none}
+.right .proclass .cat .cat1 a{ color:#3366cc; text-decoration:none ; blur:expression(this.onFocus=this.blur()); outline:none}
 
 .right .proclass .cat01{ border-left:#d5e4fa 1px solid; margin-left:25px}
 
@@ -93,7 +94,7 @@ a.toplink:hover,a.toplink:active{color:#FF9900; font-weight:bold; text-decoratio
 .right .proclass .catlist a{ height:24px; line-height:24px; padding-left:20px; cursor:pointer; display:block; text-decoration:none; blr:expression(this.onFocus=this.blur());outline:none; }
 .right .proclass .catlist a:hover{ color:#000000}
 .right .proclass .catlist a.withchild{  background:url(../images/arrow.jpg) no-repeat left; background-position:150px; }
-.right .proclass .catlist a.nochild{   }
+ 
 .right .proclass .catlist .focus{ border:#82bce0 1px dotted; background:#dff1fb; height:22px; line-height:22px }
 
 .right .selpath{ width:760px; margin-left:auto; margin-right:auto; margin-top:10px; height:30px; line-height:30px; background:#fffaf2; border:#fedbab 1px solid; color:#444444; padding-left:40px}
@@ -170,7 +171,8 @@ a.toplink:hover,a.toplink:active{color:#FF9900; font-weight:bold; text-decoratio
 .tb2 td.r{ text-align:left; background:#FFFFFF; padding-left:10px  }
 .tb2 td span{ color:#FF0000; font-family:"宋体"}
 
-.tb2 td select{ height:28px; line-height:28px; }
+.tb2 td select { height:28px; line-height:28px; }
+.tb2 td textarea { font-family:"微软雅黑"; line-height:1.8; padding:5px; }
 
 
 .tbpic{  width:96%; margin:10px auto 0 auto; background:#EFEFEF; }

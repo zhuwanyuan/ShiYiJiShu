@@ -216,21 +216,21 @@
         </div>
     </div>
     <div class="col-1-3 ml15">
-        <div class="titlebg"><h2>基地建设</h2> <a href="/List/5">更多</a> </div>
+        <div class="titlebg"><h2>基地建设</h2> <a href="/JiDi/List/0">更多</a> </div>
 
         <div class="picnews">
         @if (Model.JiDiJianShe_Pic != null)
         {
-            <div class="pic"><a href="/News/Detail/@Model.JiDiJianShe_Pic.NewsID" title="@Model.JiDiJianShe_Pic.NewsTitle" target="_blank"><img src="~/UploadPic/@Model.JiDiJianShe_Pic.NewsPic" alt="" width="120" height="80" /></a></div>
-            <div class="title"><a href="/News/Detail/@Model.JiDiJianShe_Pic.NewsID" title="@Model.JiDiJianShe_Pic.NewsTitle" target="_blank">@Model.JiDiJianShe_Pic.NewsTitle</a></div>
+            <div class="pic"><a href="/JiDi/Detail/@Model.JiDiJianShe_Pic.JiDiId" title="@Model.JiDiJianShe_Pic.JiDiName" target="_blank"><img src="~/UploadPic/@Model.JiDiJianShe_Pic.JiDiPic" alt="" width="120" height="80" /></a></div>
+            <div class="title"><a href="/JiDi/Detail/@Model.JiDiJianShe_Pic.JiDiId" title="@Model.JiDiJianShe_Pic.JiDiName" target="_blank">@Model.JiDiJianShe_Pic.JiDiName</a></div>
         }
         </div>
 
         <div class="list">
             <ul>
-                @foreach (var news in Model.JiDiJianShe)
+                @foreach (var jidi in Model.JiDiJianShe)
                 {
-                    <li><span class="title">- <a href="/News/Detail/@news.NewsID" target="_blank">@news.NewsTitle</a></span> <span class="date">@Convert.ToDateTime(news.CreateDate).ToString("MM-dd")</span></li>
+                    <li><span class="title">- <a href="/JiDi/Detail/@jidi.JiDiId" target="_blank">@jidi.JiDiName</a></span> <span class="date">@Convert.ToDateTime(jidi.AddDateTime).ToString("MM-dd")</span></li>
                 }
             </ul>
         </div>

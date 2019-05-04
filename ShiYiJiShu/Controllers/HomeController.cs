@@ -50,8 +50,8 @@ namespace ShiYiJiShu.Controllers
             model.XueShuDongTai_Pic = _dateService.GetPicNewsByClassID(4);
             model.XueShuDongTai = _dateService.GetNewsListByClassID(4, 6);
 
-            model.JiDiJianShe_Pic = _dateService.GetPicNewsByClassID(5);
-            model.JiDiJianShe = _dateService.GetNewsListByClassID(5, 6);
+            model.JiDiJianShe_Pic = _dateService.GetJiDiByTuiJian();
+            model.JiDiJianShe = _dateService.GetJiDisByCount(6);
 
             model.RuXuanJiShu_Pic = _dateService.GetPicNewsByClassID(6);
             model.RuXuanJiShu = _dateService.GetNewsListByClassID(6, 6);

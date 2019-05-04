@@ -73,6 +73,9 @@
     <Compile Include="Info.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="JiDiJianShe.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Job.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

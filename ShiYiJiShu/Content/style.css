@@ -32,8 +32,8 @@ body { background:#FFFFFF;  font-family:"微软雅黑"; background:url(../Images
 .main .topnews { background:url(../Images/topnews_bg.png) no-repeat center; color:#666899 }
 .main .topnews a { color:#666899 }
 .main .topnews a:hover { color:#ff5904; text-decoration:none; }
-.main .topnews .bigtitle { font-size:28px; line-height:38px; margin-left:80px; width:930px; }
-.main .topnews .smalltitle { font-size:14px; line-height:30px; height:30px; margin-left:35px; width:960px; overflow:hidden  }
+.main .topnews .bigtitle { font-size:26px; line-height:34px; margin-left:80px; width:930px; }
+.main .topnews .smalltitle { font-size:14px; line-height:30px; height:30px; margin-left:35px; width:960px; overflow:hidden; margin-top:5px;  }
 
 .main .left { width:210px; float:left}
 .main .titlebg { height:31px; line-height:31px; background:url(../images/shiyi_13.jpg) no-repeat left; font-family:"微软雅黑"; overflow:hidden; }
@@ -164,18 +164,7 @@ body { background:#FFFFFF;  font-family:"微软雅黑"; background:url(../Images
 .main .query .tbQuery .txtbox2 { width:80px; height:26px; line-height:26px; border:#7fb8e5 1px solid; font-size:12px; padding-left:3px; }
 .main .query .tbQuery .btnSubmit{ width:80px; height:36px; border:none; background:#0294e7; color:white; font-family: "微软雅黑"}
 
- #code{
- width:75px;
- height:30px;
- font-size:18px;
- font-family:Arial; 
- font-style:italic; 
- font-weight:bold; 
- border:0; 
- letter-spacing:2px; 
- color:black; 
- 
- }
+ #code{ width:75px; height:30px; font-size:18px; font-family:Arial; font-style:italic; font-weight:bold; border:0; letter-spacing:2px; color:black;  }
  
 .main .videolist { overflow:hidden; }
 .main .videolist ul { width:1000px; margin-left:auto; margin-right:auto; }
@@ -194,6 +183,9 @@ body { background:#FFFFFF;  font-family:"微软雅黑"; background:url(../Images
 
 .main .fengcai .box{ overflow:hidden;width:975px; margin-left:auto; margin-right:auto; padding-top:8px  } 
 .main .fengcai .list{ overflow:hidden; width:9999px; } 
+
+
+ 
  
  
 .main .left .list{ border:#dedcdc 1px solid; padding-bottom:8px }
@@ -298,7 +290,7 @@ body { background:#FFFFFF;  font-family:"微软雅黑"; background:url(../Images
 .main .colmain .doctorlist ul li .pic { height:150px; text-align:center; width:140px; float:left; }
 .main .colmain .doctorlist ul li .pic img { border:#EFEFEF 1px solid; }
 .main .colmain .doctorlist ul li .docintro {  color:#666666; font-size:16px; width:200px; float:left; }
-.main .colmain .doctorlist ul li .docintro .doclabel { width:65px; float:left; font-weight:bold; line-height:25px;   }
+.main .colmain .doctorlist ul li .docintro .doclabel { width:65px; float:left; font-weight:bold; line-height:25px; font-size:12px; }
 .main .colmain .doctorlist ul li .docintro .doctext { width:130px; float:left; line-height:25px;  }
 .main .colmain .doctorlist ul li .docintro .doczhiwu { width:130px; float:left; max-height:75px; line-height:25px; overflow:hidden;  }
 .main .colmain .doctorlist ul li .docintro .doczhicheng { width:130px; float:left; height:25px; line-height:25px; overflow:hidden;  }
@@ -327,17 +319,33 @@ body { background:#FFFFFF;  font-family:"微软雅黑"; background:url(../Images
 .main .colmain .videolist ul li .vicon { position:absolute; right:5px; bottom:30px; }
 .main .colmain .videolist ul li .text { width:520px; height:130px; float:left; margin-left:15px; }
 .main .colmain .videolist ul li .videoname { height:25px;  font-size:14px; text-align:left; }
-.main .colmain .videolist ul li .videoname a { color:#666666; font-family:"微软雅黑"; font-size:14px}
+.main .colmain .videolist ul li .videoname a { color:#666666; font-family:"微软雅黑"; font-size:16px}
 .main .colmain .videolist ul li .tag { height:25px; overflow:hidden; line-height:25px; color:#a09e9e; margin-top:30px }
 .main .colmain .videolist ul li .cinfo { line-height:25px; color:#a09e9e }
-
-
  
 .main .videodetail { padding-bottom:20px;  }
 .main .videodetail .videoinfo{ height:28px; line-height:28px; text-align:center; font-family:"微软雅黑"; margin-top:6px;}
 .main .videodetail .videoname { line-height:30px; margin-top:20px; font-size:24px; text-align:center; }
 .main .videodetail .videoplay { margin-top:30px; text-align:center; }
 .main .videodetail .videointro { padding-left:25px; padding-right:25px; padding-top:20px; }
+
+
+.main .colmain .jidilist { }
+.main .colmain .jidilist ul { width:700px; margin-left:auto; margin-right:auto  }
+.main .colmain .jidilist ul li { height:145px; width:700px; padding-top:10px; border-bottom:#EFEFEF 1px solid; font-family:"微软雅黑" }
+.main .colmain .jidilist ul li .pic { height:135px; text-align:center; width:160px; float:left; position:relative; padding-top:10px; }
+.main .colmain .jidilist ul li .vicon { position:absolute; right:5px; bottom:30px; }
+.main .colmain .jidilist ul li .text { width:520px; height:130px; float:left; margin-left:15px; }
+.main .colmain .jidilist ul li .jidiname { height:30px; line-height:30px; text-align:left; }
+.main .colmain .jidilist ul li .jidiname a { color:#383636; font-family:"微软雅黑"; font-size:16px;  }
+.main .colmain .jidilist ul li .jidicompany { height:25px; line-height:25px; font-size:12px; text-align:left; color:#666666 }
+.main .colmain .jidilist ul li .jidileader { height:25px; line-height:25px; font-size:12px; text-align:left; color:#666666 }
+.main .colmain .jidilist ul li .jidijobcontent { line-height:25px; color:#666666; font-size:12px; }
+
+.main .jididetail { padding-bottom:20px;  }
+.main .jididetail .jidiinfo { height:28px; line-height:28px; text-align:center; font-family:"微软雅黑"; margin-top:6px; font-size:14px; }
+.main .jididetail .jidiname { line-height:30px; margin-top:20px; font-size:24px; text-align:center; }
+.main .jididetail .jidiintro { padding-left:25px; padding-right:25px; padding-top:20px; font-size:18px ;  line-height:32px; color:#666666}
  
 
 .main .colmain .certQuery { width:740px; margin-left:auto; margin-right:auto; background:url(../images/JianKang_45.jpg) no-repeat center top; padding-top:30px;  }

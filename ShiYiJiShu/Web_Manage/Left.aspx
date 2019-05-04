@@ -159,7 +159,7 @@
             </ul>
         </div>
     </div>
-
+ 
     <div id="divShiPinZhongXin" runat="server">
         <div class="submenu mt5" ><img id="img11" src="images/ico04.gif" alt="" /> <a href="javascript:void(0)" target="mainFrame" onclick="list('11');" hidefocus="true">视频中心</a></div>
         <div class="menu" id="subtree11"  style=" display:none">    
@@ -179,6 +179,19 @@
                     <a href="VoteStaffAdd.aspx" target="mainFrame" onclick="tupian('912');">添加</a></li>
 
                     <li id="divTouPiaoLeiBie" runat="server"> <img id="xiaotu111" src='images/ico06.gif' alt='' /> <a href="NewsClass.aspx?firstclassid=13" target="mainFrame" onclick="tupian('111');">投票类别管理</a> </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="divJiDiJianShe" runat="server">
+        <div class="submenu mt5" ><img id="img5" src="images/ico04.gif" alt="" /> <a href="javascript:void(0)" target="mainFrame" onclick="list('5');" hidefocus="true">基地建设</a></div>
+        <div class="menu" id="subtree5"  style=" display:none">    
+            <ul>
+                    <li><img id="xiaotu5" src='images/ico06.gif' alt='' /> <a href="JiDiList.aspx" target="mainFrame" onclick="tupian('5');">基地管理</a> &nbsp; | 
+                        <a href="JiDiAdd.aspx" target="mainFrame" onclick="tupian('5');">添加</a></li>
+                    <li id="divJiDiLeiBie" runat="server">
+                            <img id="xiaotu105" src='images/ico06.gif' alt='' />
+                            <a href="NewsClass.aspx?firstclassid=5" target="mainFrame" onclick="tupian('105');">基地类别管理</a> </li>
             </ul>
         </div>
     </div>

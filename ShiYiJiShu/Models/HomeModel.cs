@@ -16,8 +16,8 @@ namespace ShiYiJiShu.Models
         public List<VoteStaff> WangLuoTouPiao { get; set; }
         public List<News> XueShuDongTai { get; set; }
         public News XueShuDongTai_Pic { get; set; }
-        public List<News> JiDiJianShe { get; set; }
-        public News JiDiJianShe_Pic { get; set; }
+        public List<JiDiJianShe> JiDiJianShe { get; set; }
+        public JiDiJianShe JiDiJianShe_Pic { get; set; }
         public List<News> RuXuanJiShu { get; set; }
         public News RuXuanJiShu_Pic { get; set; }
         public List<News> ZhengCeFaGui { get; set; }

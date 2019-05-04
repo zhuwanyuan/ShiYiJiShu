@@ -87,6 +87,18 @@ namespace ShiYiJiShu
             );
 
             routes.MapRoute(
+            name: "JiDiList",
+            url: "JiDi/List/{classid}/{currentpage}",
+            defaults: new { controller = "JiDi", action = "List", currentpage = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+            name: "JiDiDetail",
+            url: "JiDi/Detail/{jidiid}",
+            defaults: new { controller = "JiDi", action = "Detail", jidiid = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
             name: "VoteList",
             url: "Vote/List/{classid}/{currentPage}",
             defaults: new { controller = "Vote", action = "List", currentpage = UrlParameter.Optional }

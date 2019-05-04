@@ -1,0 +1,36 @@
+﻿@model ShiYiJiShu.Models.JiDiDetailModel
+@{
+    ViewBag.Title = "["+ Model.ClassName+"]"+ @Model.JiDi.JiDiName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="mt15">
+    <div class="left">
+        @*@Html.Action("GetVideoMenuPartial", "Video", new { currentClassID = Model.ClassID })*@
+
+        @Html.Action("GetNewsMenuPartial", "News", new { topClassID = Model.TopClassID, currentClassID = Model.ClassID, routeName = "JiDi/List" })
+    </div>
+
+    <div class="colmain">
+        <div class="titlebg"><h2>@Model.TopClassName</h2> <span>@*<img src="~/Images/icon-home.png" />*@当前位置：首页 > @Model.TopClassName</span> </div>
+
+        <div class="jididetail">
+
+            <div class="jidiname">
+                @Model.JiDi.JiDiName
+            </div>
+
+            <div class="jidiinfo"> 添加时间：@Model.JiDi.AddDateTime &nbsp; &nbsp; 阅读: @Model.JiDi.HitCount 次  &nbsp; &nbsp; 来源：@System.Configuration.ConfigurationManager.AppSettings["WebSiteName"].ToString() </div>
+ 
+            <div class="jidiintro">
+                @Html.Raw(Model.JiDi.JiDiIntro)
+            </div>
+
+            <div class="clear"></div>
+        </div>
+        </div>
+
+    </div>
+    <div class="clear"></div>
+　
+
+
