@@ -75,6 +75,15 @@
             </td>
         </tr>
         <tr>
+            <td class="l" style=" width:80px"> <span class="red">*</span> 所在省份：</td>
+            <td class="r">
+                
+                <asp:DropDownList ID="DDLProvice" runat="server">
+                </asp:DropDownList> 
+                
+            </td>
+        </tr>
+        <tr>
             <td class="l" style=" width:80px"> <span class="red">*</span> 基地名称：</td>
             <td class="r">
                 <asp:TextBox ID="txtJiDiName" runat="server" Width="500px" CssClass="txtbox"></asp:TextBox> <span id="spJiDiName" class="red"></span>

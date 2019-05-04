@@ -99,6 +99,7 @@
           <Property Name="JiDiPic" Type="nvarchar" MaxLength="20" />
           <Property Name="FirstClassID" Type="int" />
           <Property Name="SecondClassID" Type="int" />
+          <Property Name="ProvinceID" Type="nvarchar" MaxLength="10" />
           <Property Name="ActiveFlag" Type="int" />
           <Property Name="TuiJian" Type="int" />
           <Property Name="HitCount" Type="int" />
@@ -575,6 +576,7 @@
           <Property Name="TuiJian" Type="Int32" />
           <Property Name="HitCount" Type="Int32" />
           <Property Name="UserID" Type="Int32" />
+          <Property Name="ProvinceID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -834,6 +836,7 @@
           <EntitySetMapping Name="JiDiJianShes">
             <EntityTypeMapping TypeName="ShiYiJiShuModel.JiDiJianShe">
               <MappingFragment StoreEntitySet="JiDiJianShe">
+                <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="HitCount" ColumnName="HitCount" />
                 <ScalarProperty Name="TuiJian" ColumnName="TuiJian" />

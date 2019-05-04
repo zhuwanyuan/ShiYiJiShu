@@ -28,5 +28,6 @@ namespace ShiYiJiShu.Data
         public Nullable<int> TuiJian { get; set; }
         public Nullable<int> HitCount { get; set; }
         public Nullable<int> UserID { get; set; }
+        public string ProvinceID { get; set; }
     }
 }

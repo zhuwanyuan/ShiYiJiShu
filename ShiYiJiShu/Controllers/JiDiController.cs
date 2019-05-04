@@ -13,18 +13,21 @@ namespace ShiYiJiShu.Controllers
     {
         BaseClass bc = new BaseClass();
         DataService _dateService = new DataService();
- 
-        public ActionResult List(int classid, int? currentPage)
+
+        public ActionResult List(int classid, string provinceid, int? currentPage)
         {
             JiDiListModel model = new JiDiListModel();
 
             int pageCount = 16;
 
-            IEnumerable<JiDiJianShe> jiDiList = _dateService.GetJiDisByPageNum(classid, pageCount, currentPage);
+            IEnumerable<JiDiJianShe> jiDiList = _dateService.GetJiDisByPageNum(classid, provinceid, pageCount, currentPage);
             model.JiDiList = jiDiList;
 
+            model.ProvinceList = _dateService.GetProvinceList();
+            model.ProvinceID = provinceid;
+
             int totalCount = _dateService.GetJiDiTotalCount(classid);
- 
+
             NewsClass newsClass = _dateService.GetNewsClassByClassID(5);
             model.TopClassID = newsClass.ClassID;
             model.TopClassName = newsClass.ClassName;

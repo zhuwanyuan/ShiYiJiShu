@@ -331,7 +331,7 @@ body { background:#FFFFFF;  font-family:"微软雅黑"; background:url(../Images
 
 
 .main .colmain .jidilist { }
-.main .colmain .jidilist ul { width:700px; margin-left:auto; margin-right:auto  }
+.main .colmain .jidilist ul { width:700px; margin-left:auto; margin-right:auto; margin-top:10px;  }
 .main .colmain .jidilist ul li { height:145px; width:700px; padding-top:10px; border-bottom:#EFEFEF 1px solid; font-family:"微软雅黑" }
 .main .colmain .jidilist ul li .pic { height:135px; text-align:center; width:160px; float:left; position:relative; padding-top:10px; }
 .main .colmain .jidilist ul li .vicon { position:absolute; right:5px; bottom:30px; }

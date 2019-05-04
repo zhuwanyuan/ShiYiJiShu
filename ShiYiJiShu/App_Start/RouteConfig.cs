@@ -88,8 +88,8 @@ namespace ShiYiJiShu
 
             routes.MapRoute(
             name: "JiDiList",
-            url: "JiDi/List/{classid}/{currentpage}",
-            defaults: new { controller = "JiDi", action = "List", currentpage = UrlParameter.Optional }
+            url: "JiDi/List/{classid}/{provinceid}/{currentpage}",
+            defaults: new { controller = "JiDi", action = "List", provinceid = UrlParameter.Optional, currentpage = UrlParameter.Optional }
             );
 
             routes.MapRoute(

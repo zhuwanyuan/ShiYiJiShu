@@ -60,12 +60,23 @@ namespace ShiYiJiShu.web_manage
                             DropDownList2.Items[i].Selected = true;
                         }
                     }
+
+                    //绑定省份
+                    BindProvince();
+                    for (int i = 0; i < DDLProvice.Items.Count; i++)
+                    {
+                        if (!string.IsNullOrEmpty(model.ProvinceID) && model.ProvinceID.ToString().Trim() == DDLProvice.Items[i].Value)
+                        {
+                            DDLProvice.Items[i].Selected = true;
+                        }
+                    }
                 }
 
                 else
                 {
                     BindFirstClass();
                     BindSecondClass();
+                    BindProvince();
                 }
             }
         }
@@ -101,6 +112,7 @@ namespace ShiYiJiShu.web_manage
                 model.JiDiPic = this.hidSmallPic.Value;
                 model.FirstClassID = Convert.ToInt32(DropDownList1.SelectedItem.Value);
                 model.SecondClassID = Convert.ToInt32(DropDownList2.SelectedItem.Value);
+                model.ProvinceID = DDLProvice.SelectedItem.Value;
 
                 model.TuiJian = tuijian;
                 model.UserID = userid;
@@ -128,6 +140,7 @@ namespace ShiYiJiShu.web_manage
                 model.JiDiPic = this.hidSmallPic.Value;
                 model.FirstClassID = Convert.ToInt32(DropDownList1.SelectedItem.Value);
                 model.SecondClassID = Convert.ToInt32(DropDownList2.SelectedItem.Value);
+                model.ProvinceID = DDLProvice.SelectedItem.Value;
 
                 model.ActiveFlag = activeFlag;
                 model.HitCount = 0;
@@ -181,6 +194,16 @@ namespace ShiYiJiShu.web_manage
                     DropDownList2.DataBind();
                 }
             }
+        }
+
+        public void BindProvince()
+        {
+            List<Province> provinces = _dataService.GetProvinceList();
+
+            DDLProvice.DataSource = provinces;
+            DDLProvice.DataValueField = "Code";
+            DDLProvice.DataTextField = "Name";
+            DDLProvice.DataBind();
         }
     }
 }

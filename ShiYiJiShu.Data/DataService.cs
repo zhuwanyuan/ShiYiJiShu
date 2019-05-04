@@ -1242,7 +1242,7 @@ namespace ShiYiJiShu.Data
         }
 
         //根据类别获取文章
-        public List<JiDiJianShe> GetJiDisByPageNum(int classid, int pageCount, int? currentPage)
+        public IEnumerable<JiDiJianShe> GetJiDisByPageNum(int classid, string provinceid, int pageCount, int? currentPage)
         {
             int pageIndex = 1;
             if (currentPage != null)
@@ -1256,7 +1256,7 @@ namespace ShiYiJiShu.Data
                 startNo = 0;
             }
 
-            List<JiDiJianShe> list = new List<JiDiJianShe>();
+            IEnumerable<JiDiJianShe> list = new List<JiDiJianShe>();
 
             if (classid == 0)
             {
@@ -1265,6 +1265,11 @@ namespace ShiYiJiShu.Data
             else
             {
                 list = context.JiDiJianShes.Where(x => x.SecondClassID == classid && x.ActiveFlag == 1).OrderByDescending(x => x.JiDiId).Skip(startNo).Take(pageCount).ToList<JiDiJianShe>();
+            }
+
+            if (!string.IsNullOrEmpty(provinceid) && provinceid != "000000")
+            {
+                list = list.Where(x => x.ProvinceID == provinceid);
             }
 
             return list;
