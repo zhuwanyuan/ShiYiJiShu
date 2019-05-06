@@ -37,6 +37,7 @@ namespace ShiYiJiShu.web_manage
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            int firstclassid = Convert.ToInt32(Request.QueryString["firstclassid"]);
 
             if (Request.QueryString["classid"] != null)
             {
@@ -48,7 +49,7 @@ namespace ShiYiJiShu.web_manage
  
                 if (_dataService.UpdateNewsClass(model) > 0)
                 {
-                    bc.MessageBox("修改成功！", "DoctorClass.aspx");
+                    bc.MessageBox("修改成功！", "DoctorClass.aspx?firstclassid=" + firstclassid);
                 }
                 else
                 {
@@ -60,13 +61,13 @@ namespace ShiYiJiShu.web_manage
                 NewsClass model = new NewsClass();
                 model.ClassName = this.txtClassName.Text;
                 model.ClassLevel = 2;
-                model.ParentClassID = 25;
+                model.ParentClassID = firstclassid;
                 model.ClassType = "1";
                 model.UpdateTime = DateTime.Now;
 
                 if (_dataService.AddNewsClass(model) > 0)
                 {
-                    bc.MessageBox("添加成功！", "DoctorClass.aspx");
+                    bc.MessageBox("添加成功！", "DoctorClass.aspx?firstclassid=" + firstclassid);
                 }
                 else
                 {
@@ -94,7 +95,9 @@ namespace ShiYiJiShu.web_manage
 
         protected void BindRepeater()
         {
-            IEnumerable<NewsClass> friendLinks = _dataService.GetSubClasses(25);
+            int firstclassid = Convert.ToInt32(Request.QueryString["firstclassid"]);
+
+            IEnumerable<NewsClass> friendLinks = _dataService.GetSubClasses(firstclassid);
             repClassList.DataSource = friendLinks;
             repClassList.DataBind();
         }

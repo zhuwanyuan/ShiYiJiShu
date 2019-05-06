@@ -158,6 +158,7 @@
     <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InfoController.cs" />
+    <Compile Include="Controllers\SelectProjectController.cs" />
     <Compile Include="Controllers\MobileController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
@@ -176,6 +177,7 @@
     <Compile Include="Models\DoctorModel.cs" />
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\InfoModel.cs" />
+    <Compile Include="Models\SelectProjectModel.cs" />
     <Compile Include="Models\LeftMenuModel.cs" />
     <Compile Include="Models\NewsClassModel.cs" />
     <Compile Include="Models\NewsMenuModel.cs" />
@@ -292,6 +294,20 @@
     </Compile>
     <Compile Include="Web_Manage\Info.aspx.designer.cs">
       <DependentUpon>Info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web_Manage\SelectProjectAdd.aspx.cs">
+      <DependentUpon>SelectProjectAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_Manage\SelectProjectAdd.aspx.designer.cs">
+      <DependentUpon>SelectProjectAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web_Manage\SelectProjectList.aspx.cs">
+      <DependentUpon>SelectProjectList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_Manage\SelectProjectList.aspx.designer.cs">
+      <DependentUpon>SelectProjectList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web_Manage\Left.aspx.cs">
       <DependentUpon>Left.aspx</DependentUpon>
@@ -944,6 +960,8 @@
     <Content Include="Web_Manage\images\warning.png" />
     <Content Include="Web_Manage\index.aspx" />
     <Content Include="Web_Manage\Info.aspx" />
+    <Content Include="Web_Manage\SelectProjectAdd.aspx" />
+    <Content Include="Web_Manage\SelectProjectList.aspx" />
     <Content Include="Web_Manage\js\artDialog.js" />
     <Content Include="Web_Manage\js\formValidator.js" />
     <Content Include="Web_Manage\js\formValidatorRegex.js" />
@@ -1159,6 +1177,8 @@
     <Content Include="Web_Manage\editor\asp.net\upload_json.ashx" />
     <Content Include="Views\JiDi\Detail.cshtml" />
     <Content Include="Views\JiDi\List.cshtml" />
+    <Content Include="Views\SelectProject\Detail.cshtml" />
+    <Content Include="Views\SelectProject\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

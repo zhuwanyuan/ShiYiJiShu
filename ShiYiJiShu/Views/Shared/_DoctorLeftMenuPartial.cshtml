@@ -1,6 +1,6 @@
 ﻿@model ShiYiJiShu.Models.DoctorClassListModel
 <div class="doctorleftmenu">
-    <div class="top">专家分类</div>
+    <div class="top">栏目分类</div>
 
     @foreach (var doctorClass in Model.DoctorClassList)
     {
@@ -10,7 +10,7 @@
                 @foreach (var smallclass in doctorClass.SmallClassList)
                 {
                     <li>
-                        <a href="~/Doctor/List/@smallclass.ClassID/1" @if (smallclass.ClassID == Model.CurrentClassID) { @Html.Raw("class='sel'")   ; }>@smallclass.ClassName</a>
+                        <a href="~/@Model.ControllerName/List/@smallclass.ClassID/1" @if (smallclass.ClassID == Model.CurrentClassID) { @Html.Raw("class='sel'")   ; }>@smallclass.ClassName</a>
                     </li>
                 }
  

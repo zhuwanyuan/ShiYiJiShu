@@ -12,23 +12,23 @@ namespace ShiYiJiShu.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class JiDiJianShe
+    public partial class SelectProject
     {
-        public int JiDiId { get; set; }
-        public string JiDiName { get; set; }
-        public string JiDiCompany { get; set; }
-        public string JiDiLeader { get; set; }
-        public string JiDiJobContent { get; set; }
-        public string JiDiIntro { get; set; }
-        public string JiDiPic { get; set; }
-        public Nullable<System.DateTime> AddDateTime { get; set; }
+        public int ProjectId { get; set; }
+        public string ProjectName { get; set; }
+        public string ProjectCompany { get; set; }
+        public string ProjectLeader { get; set; }
+        public string ProjectIntro { get; set; }
+        public string ProjectContent { get; set; }
+        public string ProjectPic { get; set; }
+        public string ProjectLink { get; set; }
         public Nullable<int> FirstClassID { get; set; }
         public Nullable<int> SecondClassID { get; set; }
         public Nullable<int> ActiveFlag { get; set; }
         public Nullable<int> TuiJian { get; set; }
+        public Nullable<int> ZhiDing { get; set; }
         public Nullable<int> HitCount { get; set; }
         public Nullable<int> UserID { get; set; }
-        public string ProvinceID { get; set; }
-        public Nullable<int> ZhiDing { get; set; }
+        public Nullable<System.DateTime> AddDateTime { get; set; }
     }
 }

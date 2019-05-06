@@ -236,21 +236,21 @@
         </div>
     </div>
     <div class="col-1-3 ml15">
-        <div class="titlebg"><h2>入选项目</h2> <a href="/List/6">更多</a> </div>
+        <div class="titlebg"><h2>入选项目</h2> <a href="/SelectProject/List/0">更多</a> </div>
 
         <div class="picnews">
-        @if (Model.RuXuanJiShu_Pic != null)
+        @if (Model.RuXuanXiangMu_Pic != null)
         {
-            <div class="pic"><a href="/News/Detail/@Model.RuXuanJiShu_Pic.NewsID" title="@Model.RuXuanJiShu_Pic.NewsTitle" target="_blank"><img src="~/UploadPic/@Model.RuXuanJiShu_Pic.NewsPic" alt="" width="120" height="80" /></a></div>
-            <div class="title"><a href="/News/Detail/@Model.RuXuanJiShu_Pic.NewsID" title="@Model.RuXuanJiShu_Pic.NewsTitle" target="_blank">@Model.RuXuanJiShu_Pic.NewsTitle</a></div>
+            <div class="pic"><a href="@Model.RuXuanXiangMu_Pic.ProjectLink" title="@Model.RuXuanXiangMu_Pic.ProjectName" target="_blank"><img src="~/UploadPic/@Model.RuXuanXiangMu_Pic.ProjectPic" alt="" width="120" height="80" /></a></div>
+            <div class="title"><a href="@Model.RuXuanXiangMu_Pic.ProjectLink" title="@Model.RuXuanXiangMu_Pic.ProjectName" target="_blank">@Model.RuXuanXiangMu_Pic.ProjectName</a></div>
         }
         </div>
 
         <div class="list">
             <ul>
-                @foreach (var news in Model.RuXuanJiShu)
+                @foreach (var news in Model.RuXuanXiangMu)
                 {
-                    <li><span class="title">- <a href="/News/Detail/@news.NewsID" target="_blank">@news.NewsTitle</a></span> <span class="date">@Convert.ToDateTime(news.CreateDate).ToString("MM-dd")</span></li>
+                    <li><span class="title">- <a href="@news.ProjectLink" target="_blank">@news.ProjectName</a></span> <span class="date">@Convert.ToDateTime(news.AddDateTime).ToString("MM-dd")</span></li>
                 }
             </ul>
         </div>

@@ -99,6 +99,18 @@ namespace ShiYiJiShu
             );
 
             routes.MapRoute(
+           name: "SelectProjectList",
+           url: "SelectProject/List/{classid}/{currentpage}",
+           defaults: new { controller = "SelectProject", action = "List", classid = UrlParameter.Optional, currentpage = UrlParameter.Optional }
+           );
+
+            routes.MapRoute(
+            name: "SelectProjectDetail",
+            url: "SelectProject/Detail/{projectid}",
+            defaults: new { controller = "SelectProject", action = "Detail", projectid = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
             name: "VoteList",
             url: "Vote/List/{classid}/{currentPage}",
             defaults: new { controller = "Vote", action = "List", currentpage = UrlParameter.Optional }

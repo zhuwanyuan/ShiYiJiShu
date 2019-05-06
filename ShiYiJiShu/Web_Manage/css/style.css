@@ -172,7 +172,7 @@ a.toplink:hover,a.toplink:active{color:#FF9900; font-weight:bold; text-decoratio
 .tb2 td span{ color:#FF0000; font-family:"宋体"}
 
 .tb2 td select { height:28px; line-height:28px; }
-.tb2 td textarea { font-family:"微软雅黑"; line-height:1.8; padding:5px; }
+.tb2 td textarea { font-family:"微软雅黑"; line-height:1.8; padding:5px; font-size:12px; }
 
 
 .tbpic{  width:96%; margin:10px auto 0 auto; background:#EFEFEF; }

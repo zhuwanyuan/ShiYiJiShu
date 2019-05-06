@@ -10,7 +10,7 @@ using ShiYiJiShu.Data;
 
 namespace ShiYiJiShu.web_manage
 {
-    public partial class JiDiAdd : System.Web.UI.Page
+    public partial class SelectProjectAdd : System.Web.UI.Page
     {
         BaseClass bc = new BaseClass();
         DataService _dataService = new DataService();
@@ -21,24 +21,30 @@ namespace ShiYiJiShu.web_manage
             {
                 bc.CheckAdminLogin(this);
 
-                if (Request.QueryString["JiDiId"] != null)
+                if (Request.QueryString["ProjectId"] != null)
                 {
-                    int jiDiId = Convert.ToInt32(Request.QueryString["JiDiId"].ToString());
+                    int projectid = Convert.ToInt32(Request.QueryString["ProjectId"].ToString());
 
-                    JiDiJianShe model = _dataService.GetJiDiByID(jiDiId);
+                    SelectProject model = _dataService.GetSelectProjectByID(projectid);
 
-                    this.txtJiDiName.Text = model.JiDiName;
-                    this.txtJiDiCompany.Text = model.JiDiCompany;
-                    this.txtJiDiLeader.Text = model.JiDiLeader;
-                    this.txtJiDiJobContent.Text = model.JiDiJobContent;
-                    this.txtJiDiIntro.Value = model.JiDiIntro;
-                    this.hidSmallPic.Value = model.JiDiPic;
+                    this.txtProjectName.Text = model.ProjectName;
+                    this.txtProjectCompany.Text = model.ProjectCompany;
+                    this.txtProjectLeader.Text = model.ProjectLeader;
+                    this.txtProjectIntro.Text = model.ProjectIntro;
+                    this.txtProjectLink.Text = model.ProjectLink;
+                    this.hidSmallPic.Value = model.ProjectPic;
  
-                    this.img.Src = "../uploadpic/" + model.JiDiPic;
+                    this.img.Src = "../uploadpic/" + model.ProjectPic;
 
                     if (model.TuiJian == 1)
                     {
                         cbTuiJian.Checked = true;
+                    }
+
+
+                    if (model.ZhiDing == 1)
+                    {
+                        cbZhiDing.Checked = true;
                     }
 
                     //绑定一级类别
@@ -60,23 +66,11 @@ namespace ShiYiJiShu.web_manage
                             DropDownList2.Items[i].Selected = true;
                         }
                     }
-
-                    //绑定省份
-                    BindProvince();
-                    for (int i = 0; i < DDLProvice.Items.Count; i++)
-                    {
-                        if (!string.IsNullOrEmpty(model.ProvinceID) && model.ProvinceID.ToString().Trim() == DDLProvice.Items[i].Value)
-                        {
-                            DDLProvice.Items[i].Selected = true;
-                        }
-                    }
                 }
-
                 else
                 {
                     BindFirstClass();
                     BindSecondClass();
-                    BindProvince();
                 }
             }
         }
@@ -89,6 +83,12 @@ namespace ShiYiJiShu.web_manage
                 tuijian = 1;
             }
 
+            int zhiding = 0;
+            if (cbZhiDing.Checked)
+            {
+                zhiding = 1;
+            }
+
             int userid = Convert.ToInt32(Request.Cookies["AdminUser"]["userid"]);
             int userGrade = Convert.ToInt32(Request.Cookies["AdminUser"]["usergrade"]);
 
@@ -98,30 +98,30 @@ namespace ShiYiJiShu.web_manage
                 activeFlag = 1;
             }
 
-            if (Request.QueryString["JiDiId"] != null)
+            if (Request.QueryString["ProjectId"] != null)
             {
-                int jiDiId = Convert.ToInt32(Request.QueryString["JiDiId"].ToString());
+                int projectId = Convert.ToInt32(Request.QueryString["ProjectId"].ToString());
                 
-                JiDiJianShe model = _dataService.GetJiDiByID(jiDiId);
+                SelectProject model = _dataService.GetSelectProjectByID(projectId);
 
-                model.JiDiName = this.txtJiDiName.Text;
-                model.JiDiCompany = this.txtJiDiCompany.Text;
-                model.JiDiLeader = this.txtJiDiLeader.Text;
-                model.JiDiJobContent = this.txtJiDiJobContent.Text;
-                model.JiDiIntro = this.txtJiDiIntro.Value;
-                model.JiDiPic = this.hidSmallPic.Value;
+                model.ProjectName = this.txtProjectName.Text;
+                model.ProjectCompany = this.txtProjectCompany.Text;
+                model.ProjectLeader = this.txtProjectLeader.Text;
+                model.ProjectIntro = this.txtProjectIntro.Text;
+                model.ProjectLink = this.txtProjectLink.Text;
+                model.ProjectPic = this.hidSmallPic.Value;
                 model.FirstClassID = Convert.ToInt32(DropDownList1.SelectedItem.Value);
                 model.SecondClassID = Convert.ToInt32(DropDownList2.SelectedItem.Value);
-                model.ProvinceID = DDLProvice.SelectedItem.Value;
-
+ 
                 model.TuiJian = tuijian;
+                model.ZhiDing = zhiding;
                 model.UserID = userid;
                 model.AddDateTime = DateTime.Now;
  
 
-                if (_dataService.UpdateJiDi(model) > 0)
+                if (_dataService.UpdateSelectProject(model) > 0)
                 {
-                    bc.MessageBox("修改成功！", "JiDiList.aspx");
+                    bc.MessageBox("修改成功！", "SelectProjectList.aspx");
                 }
                 else
                 {
@@ -130,28 +130,29 @@ namespace ShiYiJiShu.web_manage
             }
             else
             {
-                JiDiJianShe model = new JiDiJianShe();
+                SelectProject model = new SelectProject();
 
-                model.JiDiName = this.txtJiDiName.Text;
-                model.JiDiCompany = this.txtJiDiCompany.Text;
-                model.JiDiLeader = this.txtJiDiLeader.Text;
-                model.JiDiJobContent = this.txtJiDiJobContent.Text;
-                model.JiDiIntro = this.txtJiDiIntro.Value;
-                model.JiDiPic = this.hidSmallPic.Value;
+                model.ProjectName = this.txtProjectName.Text;
+                model.ProjectCompany = this.txtProjectCompany.Text;
+                model.ProjectLeader = this.txtProjectLeader.Text;
+                model.ProjectIntro = this.txtProjectIntro.Text;
+                model.ProjectLink = this.txtProjectLink.Text;
+                model.ProjectPic = this.hidSmallPic.Value;
                 model.FirstClassID = Convert.ToInt32(DropDownList1.SelectedItem.Value);
                 model.SecondClassID = Convert.ToInt32(DropDownList2.SelectedItem.Value);
-                model.ProvinceID = DDLProvice.SelectedItem.Value;
+           
 
                 model.ActiveFlag = activeFlag;
                 model.HitCount = 0;
                 model.TuiJian = tuijian;
+                model.ZhiDing = zhiding;
                 model.UserID = userid;
                 model.AddDateTime = DateTime.Now;
 
 
-                if (_dataService.AddJiDi(model) > 0)
+                if (_dataService.AddSelectProject(model) > 0)
                 {
-                    bc.MessageBox("添加成功！", "JiDiList.aspx");
+                    bc.MessageBox("添加成功！", "SelectProjectList.aspx");
                 }
                 else
                 {
@@ -167,7 +168,7 @@ namespace ShiYiJiShu.web_manage
 
         public void BindFirstClass()
         {
-            IEnumerable<NewsClass> firstClasses = _dataService.GetSubClasses(5);
+            IEnumerable<NewsClass> firstClasses = _dataService.GetSubClasses(7);
 
             if (firstClasses.Count() > 0)
             {
@@ -192,15 +193,6 @@ namespace ShiYiJiShu.web_manage
                 DropDownList2.DataBind();
             }
         }
-
-        public void BindProvince()
-        {
-            List<Province> provinces = _dataService.GetProvinceList();
-
-            DDLProvice.DataSource = provinces;
-            DDLProvice.DataValueField = "Code";
-            DDLProvice.DataTextField = "Name";
-            DDLProvice.DataBind();
-        }
+ 
     }
 }

@@ -42,6 +42,7 @@ namespace ShiYiJiShu.Web_Master
                     divTouPiaoGuanLi.Visible = false;
 
                     divJiDiLeiBie.Visible = false;
+                    divRuXuanXiangMuLeiBie.Visible = false;
                 }
 
                 //文章管理

@@ -136,7 +136,7 @@
                          <a href="DoctorSubClass.aspx?classid=<%#Eval("ClassID") %>">编辑二级类别</a>
                         </td>   
                         <td class="td1" align="center">
-                                <a href='DoctorClass.aspx?classid=<%#Eval("ClassID") %>'><img src="images/toolbar_edit.gif" alt="修改" style="border:0" /></a> &nbsp; <asp:ImageButton ID="ImageButton1" CommandName="delete" runat="server" ImageUrl="images/toolbar_del.gif" OnClientClick="javascript:return confirm('您确定要删除么，删除后不可恢复！');"/>
+                                <a href='DoctorClass.aspx?firstclassid=<%#Eval("ParentClassID") %>&classid=<%#Eval("ClassID") %>'><img src="images/toolbar_edit.gif" alt="修改" style="border:0" /></a> &nbsp; <asp:ImageButton ID="ImageButton1" CommandName="delete" runat="server" ImageUrl="images/toolbar_del.gif" OnClientClick="javascript:return confirm('您确定要删除么，删除后不可恢复！');"/>
                         </td>
                     </tr>
                 </ItemTemplate>
@@ -152,7 +152,7 @@
                          <a href="DoctorSubClass.aspx?classid=<%#Eval("ClassID") %>">编辑二级类别</a>
                         </td>   
                         <td class="td2" align="center">
-                                <a href='DoctorClass.aspx?classid=<%#Eval("ClassID") %>'><img src="images/toolbar_edit.gif" alt="修改" style="border:0" /></a> &nbsp; <asp:ImageButton ID="ImageButton1" CommandName="delete" runat="server" ImageUrl="images/toolbar_del.gif" OnClientClick="javascript:return confirm('您确定要删除么，删除后不可恢复！');"/>
+                                <a href='DoctorClass.aspx?firstclassid=<%#Eval("ParentClassID") %>&classid=<%#Eval("ClassID") %>'><img src="images/toolbar_edit.gif" alt="修改" style="border:0" /></a> &nbsp; <asp:ImageButton ID="ImageButton1" CommandName="delete" runat="server" ImageUrl="images/toolbar_del.gif" OnClientClick="javascript:return confirm('您确定要删除么，删除后不可恢复！');"/>
                         </td>
                     </tr>
                 </AlternatingItemTemplate>

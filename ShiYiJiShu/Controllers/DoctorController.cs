@@ -148,13 +148,13 @@ namespace ShiYiJiShu.Controllers
             }
         }
 
-        public PartialViewResult DoctorLeftMenu(int currentClassID)
+        public PartialViewResult DoctorLeftMenu(int topClassID, int currentClassID, string controllerName)
         {
             DoctorClassListModel model = new DoctorClassListModel();
 
             List<DoctorClassModel> modellist = new List<DoctorClassModel>();
   
-            List<NewsClass> bigClassList = _dateService.GetSubClasses(25).ToList<NewsClass>();
+            List<NewsClass> bigClassList = _dateService.GetSubClasses(topClassID).ToList<NewsClass>();
 
             for (int i = 0; i < bigClassList.Count(); i++)
             {
@@ -175,6 +175,7 @@ namespace ShiYiJiShu.Controllers
 
             model.DoctorClassList = modellist;
             model.CurrentClassID = currentClassID;
+            model.ControllerName = controllerName;
  
             if (bc.CheckMobile())
             {

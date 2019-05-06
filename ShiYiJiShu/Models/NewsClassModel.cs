@@ -15,6 +15,7 @@ namespace ShiYiJiShu.Models
     public class DoctorClassListModel
     {
         public int CurrentClassID { get; set; }
+        public string ControllerName { get; set; }
         public List<DoctorClassModel> DoctorClassList { get; set; }
     }
 

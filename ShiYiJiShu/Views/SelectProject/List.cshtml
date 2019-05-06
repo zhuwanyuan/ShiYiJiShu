@@ -1,0 +1,44 @@
+﻿@model ShiYiJiShu.Models.SelectProjectListModel
+@{
+    ViewBag.Title = Model.ClassName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="mt15">
+    <div class="left">
+        @Html.Action("DoctorLeftMenu", "Doctor", new { topClassID = 7, currentClassID = Model.ClassID, controllerName="SelectProject" })
+    </div>
+
+    <div class="colmain">
+        <div class="titlebg"><h2>@Model.TopClassName</h2> <span> 当前位置：首页 > @Model.TopClassName</span> </div>
+ 
+        <div class="selprojectlist">
+            <ul>
+                @foreach (var project in Model.SelectProjectList)
+                {
+                    <li>
+                        <div class="pic">
+                            <a href="@project.ProjectLink" target="_blank">
+                                <img src="~/uploadpic/@project.ProjectPic" width="160" height="110" class="thumbnail" />
+
+                            </a>
+                        </div>
+                        <div class="text">
+                            <div class="jidiname"><a href="@project.ProjectLink" target="_blank">@project.ProjectName</a></div>
+                            <div class="jidicompany"><b>共建单位：</b> @project.ProjectCompany </div>
+                            <div class="jidileader"><b>基地负责人：</b> @project.ProjectLeader </div>
+                            <div class="jidijobcontent"><b>工作内容：</b> @project.ProjectIntro </div>
+                        </div>
+
+                    </li>
+                }
+            </ul>
+
+            <div class="clear"></div>
+
+            <div class="pagelink">@Html.Raw(Model.PageLink)</div>
+        </div>
+
+    </div>
+    <div class="clear"></div>
+</div>

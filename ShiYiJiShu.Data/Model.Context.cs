@@ -42,5 +42,6 @@ namespace ShiYiJiShu.Data
         public virtual DbSet<Province> Provinces { get; set; }
         public virtual DbSet<ProjectRegister> ProjectRegisters { get; set; }
         public virtual DbSet<JiDiJianShe> JiDiJianShes { get; set; }
+        public virtual DbSet<SelectProject> SelectProjects { get; set; }
     }
 }

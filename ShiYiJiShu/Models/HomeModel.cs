@@ -18,8 +18,8 @@ namespace ShiYiJiShu.Models
         public News XueShuDongTai_Pic { get; set; }
         public List<JiDiJianShe> JiDiJianShe { get; set; }
         public JiDiJianShe JiDiJianShe_Pic { get; set; }
-        public List<News> RuXuanJiShu { get; set; }
-        public News RuXuanJiShu_Pic { get; set; }
+        public List<SelectProject> RuXuanXiangMu { get; set; }
+        public SelectProject RuXuanXiangMu_Pic { get; set; }
         public List<News> ZhengCeFaGui { get; set; }
         public List<News> HuiYuanZhongXin { get; set; }
         public List<Video> ShiPinZhongXin { get; set; }

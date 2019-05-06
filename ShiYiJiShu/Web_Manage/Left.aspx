@@ -75,7 +75,7 @@
                             <a href="DoctorAdd.aspx" target="mainFrame" onclick="tupian('25');">添加</a></li>
                 <li  id="divZhuanJiaLeiBie" runat="server">
                             <img id="xiaotu99" src='images/ico06.gif' alt='' />
-                            <a href="DoctorClass.aspx" target="mainFrame" onclick="tupian('99');">专家类别管理</a> </li>
+                            <a href="DoctorClass.aspx?firstclassid=25" target="mainFrame" onclick="tupian('99');">专家类别管理</a> </li>
             </ul>
         </div>
     </div>
@@ -192,6 +192,19 @@
                     <li id="divJiDiLeiBie" runat="server">
                             <img id="xiaotu105" src='images/ico06.gif' alt='' />
                             <a href="NewsClass.aspx?firstclassid=5" target="mainFrame" onclick="tupian('105');">基地类别管理</a> </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="divRuXuanXiangMu" runat="server">
+        <div class="submenu mt5" ><img id="img7" src="images/ico04.gif" alt="" /> <a href="javascript:void(0)" target="mainFrame" onclick="list('7');" hidefocus="true">入选项目</a></div>
+        <div class="menu" id="subtree7"  style=" display:none">    
+            <ul>
+                    <li><img id="xiaotu7" src='images/ico06.gif' alt='' /> <a href="SelectProjectList.aspx" target="mainFrame" onclick="tupian('7');">项目管理</a> &nbsp; | 
+                        <a href="SelectProjectAdd.aspx" target="mainFrame" onclick="tupian('7');">添加</a></li>
+                    <li id="divRuXuanXiangMuLeiBie" runat="server">
+                            <img id="xiaotu107" src='images/ico06.gif' alt='' />
+                            <a href="NewsClass.aspx?firstclassid=7" target="mainFrame" onclick="tupian('107');">入选项目类别管理</a> </li>
             </ul>
         </div>
     </div>

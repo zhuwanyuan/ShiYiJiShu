@@ -1334,5 +1334,140 @@ namespace ShiYiJiShu.Data
             return count;
         }
         #endregion
+
+        #region >>>SelectProject<<<
+        //添加案例
+        public int AddSelectProject(SelectProject model)
+        {
+            context.SelectProjects.Add(model);
+            return context.SaveChanges();
+        }
+
+        //修改案例
+        public int UpdateSelectProject(SelectProject model)
+        {
+            SelectProject jdModel = model;
+            return context.SaveChanges();
+        }
+
+        public int GetSelectProjectTotalCount(int classid)
+        {
+            int totalCount = 0;
+
+            if (classid == 0)
+            {
+                totalCount = context.SelectProjects.Count();
+            }
+            else
+            {
+                totalCount = context.SelectProjects.Where(x => x.SecondClassID == classid).Count();
+            }
+
+            return totalCount;
+        }
+
+        //根据案例ID获取案例
+        public SelectProject GetSelectProjectByID(int projectid)
+        {
+            SelectProject model = context.SelectProjects.FirstOrDefault(c => c.ProjectId == projectid);
+            return model;
+        }
+
+        //根据案例ID获取案例
+        public SelectProject GetSelectProjectByTuiJian()
+        {
+            SelectProject model = context.SelectProjects.OrderByDescending(x => x.AddDateTime).FirstOrDefault(c => c.TuiJian == 1);
+            return model;
+        }
+
+        //根据类别获取文章
+        public IEnumerable<SelectProject> GetSelectProjectsByPageNum(int classid, int pageCount, int? currentPage)
+        {
+            int pageIndex = 1;
+            if (currentPage != null)
+            {
+                pageIndex = (int)currentPage;
+            }
+
+            int startNo = (pageIndex - 1) * pageCount;
+            if (startNo < 0)
+            {
+                startNo = 0;
+            }
+
+            IEnumerable<SelectProject> list = new List<SelectProject>();
+
+            if (classid == 0)
+            {
+                list = context.SelectProjects.Where(x => x.ActiveFlag == 1).OrderByDescending(x => x.ProjectId).Skip(startNo).Take(pageCount).ToList<SelectProject>();
+            }
+            else
+            {
+                list = context.SelectProjects.Where(x => x.SecondClassID == classid && x.ActiveFlag == 1).OrderByDescending(x => x.ProjectId).Skip(startNo).Take(pageCount).ToList<SelectProject>();
+            }
+
+            
+            return list;
+        }
+
+        //根据类别获取文章
+        public List<SelectProject> GetSelectProjectsByCount(int count)
+        {
+            var list = context.SelectProjects.Where(x => x.ActiveFlag == 1).OrderByDescending(x => x.ProjectId).Take(count).ToList<SelectProject>();
+            return list;
+        }
+
+        //点击次数+1
+        public void AddSelectProjectHitCount(int projectid)
+        {
+            SelectProject model = context.SelectProjects.Where(s => s.ProjectId == projectid).FirstOrDefault();
+            model.HitCount = model.HitCount + 1;
+            context.SaveChanges();
+        }
+
+        public List<SelectProject> GetSelectProjectsByAdminID(int adminid, int pageCount, int? currentPage)
+        {
+            int pageIndex = 1;
+            if (currentPage != null)
+            {
+                pageIndex = (int)currentPage;
+            }
+
+            int startNo = (pageIndex - 1) * pageCount;
+            if (startNo < 0)
+            {
+                startNo = 0;
+            }
+
+            List<SelectProject> jidilist = new List<SelectProject>();
+
+            if (adminid == 1) //高级管理员
+            {
+                jidilist = context.SelectProjects.OrderBy(x => x.ActiveFlag).ThenByDescending(c => c.ProjectId).Skip(startNo).Take(pageCount).ToList<SelectProject>();
+            }
+            else //普通管理员
+            {
+                jidilist = context.SelectProjects.Where(c => c.UserID == adminid).OrderBy(x => x.ActiveFlag).ThenByDescending(c => c.ProjectId).Skip(startNo).Take(pageCount).ToList<SelectProject>();
+            }
+
+            return jidilist;
+        }
+
+        public int GetSelectProjectTotalCountByAdminID(int adminid)
+        {
+            int count = 0;
+
+            if (adminid == 1) //高级管理员
+            {
+                count = context.SelectProjects.Count();
+            }
+            else //普通管理员
+            {
+                count = context.SelectProjects.Where(c => c.UserID == adminid).Count();
+            }
+
+            return count;
+        }
+        #endregion
     }
 }
