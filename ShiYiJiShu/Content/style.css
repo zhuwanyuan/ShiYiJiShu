@@ -337,10 +337,10 @@ body { background:#FFFFFF;  font-family:"微软雅黑"; background:url(../Images
 .main .colmain .jidilist ul li .vicon { position:absolute; right:5px; bottom:30px; }
 .main .colmain .jidilist ul li .text { width:520px; height:130px; float:left; margin-left:15px; }
 .main .colmain .jidilist ul li .jidiname { height:30px; line-height:30px; text-align:left; }
-.main .colmain .jidilist ul li .jidiname a { color:#383636; font-family:"微软雅黑"; font-size:16px;  }
+.main .colmain .jidilist ul li .jidiname a { color:#0294e7; font-family:"微软雅黑"; font-size:16px;  font-weight:bold;  }
 .main .colmain .jidilist ul li .jidicompany { height:25px; line-height:25px; font-size:12px; text-align:left; color:#666666 }
 .main .colmain .jidilist ul li .jidileader { height:25px; line-height:25px; font-size:12px; text-align:left; color:#666666 }
-.main .colmain .jidilist ul li .jidijobcontent { line-height:25px; color:#666666; font-size:12px; }
+.main .colmain .jidilist ul li .jidijobcontent { line-height:25px; color:#666666; font-size:12px; height:50px; overflow:hidden; }
 
 .main .jididetail { padding-bottom:20px;  }
 .main .jididetail .jidiinfo { height:28px; line-height:28px; text-align:center; font-family:"微软雅黑"; margin-top:6px; font-size:14px; }
@@ -350,15 +350,15 @@ body { background:#FFFFFF;  font-family:"微软雅黑"; background:url(../Images
 
 .main .colmain .selprojectlist { }
 .main .colmain .selprojectlist ul { width:700px; margin-left:auto; margin-right:auto; margin-top:10px;  }
-.main .colmain .selprojectlist ul li { height:155px; width:700px; padding-top:10px; border-bottom:#EFEFEF 1px solid; font-family:"微软雅黑" }
+.main .colmain .selprojectlist ul li { height:145px; width:700px; padding-top:10px; border-bottom:#EFEFEF 1px solid; font-family:"微软雅黑"; overflow:hidden; }
 .main .colmain .selprojectlist ul li .pic { height:135px; text-align:center; width:160px; float:left; position:relative; padding-top:10px; }
 .main .colmain .selprojectlist ul li .vicon { position:absolute; right:5px; bottom:30px; }
 .main .colmain .selprojectlist ul li .text { width:520px; height:130px; float:left; margin-left:15px; }
 .main .colmain .selprojectlist ul li .jidiname { height:30px; line-height:30px; text-align:left; }
-.main .colmain .selprojectlist ul li .jidiname a { color:#383636; font-family:"微软雅黑"; font-size:16px;  }
+.main .colmain .selprojectlist ul li .jidiname a { color:#0294e7; font-family:"微软雅黑"; font-size:16px; font-weight:bold;  }
 .main .colmain .selprojectlist ul li .jidicompany { height:25px; line-height:25px; font-size:12px; text-align:left; color:#666666 }
 .main .colmain .selprojectlist ul li .jidileader { height:25px; line-height:25px; font-size:12px; text-align:left; color:#666666 }
-.main .colmain .selprojectlist ul li .jidijobcontent { line-height:22px; color:#666666; font-size:12px; }
+.main .colmain .selprojectlist ul li .jidijobcontent { line-height:25px; color:#666666; font-size:12px; height:50px; overflow:hidden; }
  
 
 .main .colmain .certQuery { width:740px; margin-left:auto; margin-right:auto; background:url(../images/JianKang_45.jpg) no-repeat center top; padding-top:30px;  }

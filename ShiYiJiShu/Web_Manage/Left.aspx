@@ -184,7 +184,7 @@
     </div>
 
     <div id="divJiDiJianShe" runat="server">
-        <div class="submenu mt5" ><img id="img5" src="images/ico04.gif" alt="" /> <a href="javascript:void(0)" target="mainFrame" onclick="list('5');" hidefocus="true">基地建设</a></div>
+        <div class="submenu mt5" ><img id="img5" src="images/ico04.gif" alt="" /> <a href="javascript:void(0)" target="mainFrame" onclick="list('5');" hidefocus="true">共建基地</a></div>
         <div class="menu" id="subtree5"  style=" display:none">    
             <ul>
                     <li><img id="xiaotu5" src='images/ico06.gif' alt='' /> <a href="JiDiList.aspx" target="mainFrame" onclick="tupian('5');">基地管理</a> &nbsp; | 
