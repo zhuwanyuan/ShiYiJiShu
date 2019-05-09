@@ -103,7 +103,7 @@
             <td class="r">
                 <input type="hidden" id="hidSmallPic" runat="server" />
                 <img id="img" runat="server" src="images/nopic02.jpg" alt="" style=" border:#d6b87c 1px solid; width:125px; height:95px"  /> &nbsp;
-                <input type="button" onclick="javascript: UploadPic()" class="btn" value="上传" /> &nbsp; [图片尺寸：125*95]
+                <input type="button" onclick="javascript: UploadPic()" class="btn" value="上传" /> &nbsp; [图片尺寸：160*110]
                </td>
         </tr>
       

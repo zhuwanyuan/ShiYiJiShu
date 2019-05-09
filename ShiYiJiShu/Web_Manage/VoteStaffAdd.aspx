@@ -78,24 +78,7 @@
                 <asp:TextBox ID="txtTechName" runat="server" Width="500px" CssClass="txtbox"></asp:TextBox> <span id="spTechName" class="red"></span>
                </td>
         </tr>
-       <%-- <tr>
-            <td class="l" style=" width:100px"> <span class="red">*</span> 姓名：</td>
-            <td class="r">
-                <asp:TextBox ID="txtStaffName" runat="server" Width="500px" CssClass="txtbox"></asp:TextBox> <span id="spStaffName" class="red"></span>
-               </td>
-        </tr>
-         <tr>
-            <td class="l" style=" width:100px"> <span class="red">*</span> 职位：</td>
-            <td class="r">
-                <asp:TextBox ID="txtJobTitle" runat="server" Width="500px" CssClass="txtbox"></asp:TextBox> <span id="spJobTitle" class="red"></span>
-               </td>
-        </tr>
-         <tr>
-            <td class="l" style=" width:100px"> <span class="red">*</span> 所在单位：</td>
-            <td class="r">
-                <asp:TextBox ID="txtCompany" runat="server" Width="500px" CssClass="txtbox"></asp:TextBox> <span id="spCompany" class="red"></span>
-               </td>
-        </tr>--%>
+       
          <tr>
             <td class="l" style=" width:100px"> <span class="red">*</span> 详情链接：</td>
             <td class="r">
@@ -107,7 +90,7 @@
             <td class="r">
                 <input type="hidden" id="hidSmallPic" runat="server" />
                <img id="img" runat="server" src="images/nopic01.jpg" alt="" style=" width:120px; height:80px; border:#d6b87c 1px solid;"  />
-               &nbsp; <input type="button" onclick="javascript: UploadPic()" class="btn" value="上传" /> 【图片尺寸：170px × 130px】
+               &nbsp; <input type="button" onclick="javascript: UploadPic()" class="btn" value="上传" /> 【图片尺寸：200px × 150px】
             </td>
         </tr>
    

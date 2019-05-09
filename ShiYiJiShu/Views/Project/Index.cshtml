@@ -36,14 +36,18 @@
                         <p class="vname"><a href="/Project/Detail/@project.ProjectID" title="@project.ProjectName">@project.ProjectName</a></p>
 
                         <div class="bmbtn">
-                            <input type="button" value="报名学习" onclick="openRegForm('@project.ProjectID','@project.ProjectName')"  />
+                            <input type="button" value="报名学习" onclick="openRegForm('@project.ProjectID','@project.ProjectName')" />
                         </div>
                     </li>
                 }
             </ul>
+
+            <div class="clear"></div>
+
+            <div class="pagelink">@Html.Raw(Model.PageLink)</div>
         </div>
 
-        <div class="pagelink">@Html.Raw(Model.PageLink)</div>
+      
     </div>
 
     <div class="clear"></div>
