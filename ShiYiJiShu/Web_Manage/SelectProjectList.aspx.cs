@@ -36,7 +36,7 @@ namespace ShiYiJiShu.web_manage
 
                 if (e.CommandName == "delete")
                 {
-                    string sql = "delete from SelectProject where ProjectID=" + Convert.ToInt32(lbProjectID.Text);
+                    string sql = "DELETE FROM SelectProject WHERE ProjectID=" + Convert.ToInt32(lbProjectID.Text);
                     bc.ExecuteSQL(sql);
                     BindRepeater();
                 }

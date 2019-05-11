@@ -45,7 +45,8 @@
 
             //验证专家名称
             $("#txtJiDiName").formValidator({ tipid: "spJiDiName", onfocus: "请输入基地名称！", oncorrect: " &nbsp; " }).inputValidator({ min: 1, max: 200, onerror: "基地名称不能为空！" });
- 
+            $("#txtJiDiJobContent").formValidator({ tipid: "spJiDiJobContent", onfocus: "请输入工作内容!", oncorrect: " &nbsp; " }).inputValidator({ min: 1, max: 140, onerror: "工作内容不能超过70个字！" });
+
         });
 
     </script>
@@ -104,7 +105,7 @@
         <tr>
             <td class="l" style=" width:80px"> <span class="red">*</span> 工作内容：</td>
             <td class="r">
-                <asp:TextBox ID="txtJiDiJobContent" runat="server" Width="500px" autoHeight="true" Rows="6" TextMode="MultiLine"></asp:TextBox> <span id="spJiDiJobContent"></span>  (最多输入500个文字)
+                <asp:TextBox ID="txtJiDiJobContent" runat="server" Width="500px" autoHeight="true" Rows="6" TextMode="MultiLine"></asp:TextBox> <span id="spJiDiJobContent"></span> <%-- (最多输入70个文字)--%>
                </td>
         </tr>
         <tr>

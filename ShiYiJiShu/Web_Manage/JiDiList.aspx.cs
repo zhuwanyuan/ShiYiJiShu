@@ -32,28 +32,28 @@ namespace ShiYiJiShu.web_manage
         {
             if (e.Item.ItemType == ListItemType.AlternatingItem || e.Item.ItemType == ListItemType.Item)
             {
-                Label lbProjectID = (Label)e.Item.FindControl("ProjectID");
+                Label lbJiDiId = (Label)e.Item.FindControl("lbJiDiId");
 
                 if (e.CommandName == "delete")
                 {
-                    string sql = "delete from Project where ProjectID=" + Convert.ToInt32(lbProjectID.Text);
+                    string sql = "DELETE FROM JiDiJianShe WHERE JiDiId=" + Convert.ToInt32(lbJiDiId.Text);
                     bc.ExecuteSQL(sql);
                     BindRepeater();
                 }
 
                 if (e.CommandName == "approve")
                 {
-                    string sql = "UPDATE Project SET ACTIVEFLAG = 1 where ProjectID=" + Convert.ToInt32(lbProjectID.Text);
+                    string sql = "UPDATE JiDiJianShe SET ACTIVEFLAG = 1 where JiDiId=" + Convert.ToInt32(lbJiDiId.Text);
                     bc.ExecuteSQL(sql);
                     //BindRepeater();
-                    Response.Redirect("ProjectList.aspx");
+                    Response.Redirect("JiDIList.aspx");
                 }
 
                 if (e.CommandName == "unapprove")
                 {
-                    string sql = "UPDATE Project SET ACTIVEFLAG = 0 where ProjectID=" + Convert.ToInt32(lbProjectID.Text);
+                    string sql = "UPDATE JiDiJianShe SET ACTIVEFLAG = 0 where JiDiId=" + Convert.ToInt32(lbJiDiId.Text);
                     bc.ExecuteSQL(sql);
-                    Response.Redirect("ProjectList.aspx");
+                    Response.Redirect("JiDIList.aspx");
                 }
             }
         }
